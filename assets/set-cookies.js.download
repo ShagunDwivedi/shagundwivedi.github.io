@@ -1,0 +1,105 @@
+function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}
+
+function getCookie(cName) {
+    const name = cName + "=";
+    const cDecoded = decodeURIComponent(document.cookie); //to be careful
+    const cArr = cDecoded.split('; ');
+    let res;
+    cArr.forEach(val => {
+        if (val.indexOf(name) === 0) res = val.substring(name.length);
+    })
+    return res;
+}
+
+const url = new URL(window.location.href)
+
+const internal_url = url.pathname
+const referrer = document.referrer;
+
+const queryString = window.location.search;
+let incomingUtmParams = parseQuery(queryString);
+const utm_source = url.searchParams.get("utm_source")
+const utm_medium = url.searchParams.get("utm_medium")
+const utm_campaign = url.searchParams.get("utm_campaign")
+const utm_content = url.searchParams.get("utm_content")
+const utm_term = url.searchParams.get("utm_term")
+const gclid = url.searchParams.get("gclid")
+const msclkid = url.searchParams.get("msclkid")
+const adgroupid = url.searchParams.get("adgroupid")
+const targetid = url.searchParams.get("targetid")
+const appsflyer_id = url.searchParams.get("appsflyer_id")
+const appsflyer_cuid = url.searchParams.get("appsflyer_cuid")
+const cta_btn = url.searchParams.get("cta_btn")
+
+
+const utmValue = {
+    "referrer": referrer,
+    "internal_url": internal_url,
+    "utm_source": utm_source,
+    "utm_medium": utm_medium,
+    "utm_campaign": utm_campaign,
+    "utm_content": utm_content,
+    "utm_term": utm_term,
+    "gclid": gclid,
+    "msclkid": msclkid,
+    "adgroupid": adgroupid,
+    "targetid": targetid,
+    "appsflyer_id": appsflyer_id,
+    "appsflyer_cuid": appsflyer_cuid,
+    "cta_btn": cta_btn
+}
+
+let finalUtmParams = {
+    ...utmValue,
+    ...incomingUtmParams
+};
+
+function setCookie(name, value = {}, expDays) {
+
+    let date = new Date();
+    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    if (window.location.hostname === 'eduzaurus.com' || window.location.hostname === 'edubirdie.com' || window.location.hostname === 'papersowl.com') {
+        document.cookie = name + "=" + JSON.stringify(value) + "; " + expires + "; path=/";
+    } else {
+        document.cookie = name + "=" + JSON.stringify(value) + "; " + expires + "; path=/;  domain=" + window.location.hostname;
+    }
+
+}
+
+if (getCookie('session_controller') == 1) {
+    //console.log('You\'re in an existing session');
+    let firstInteractionUser = getCookie('last_interaction');
+    const queryStringNew = window.location.search;
+
+    let incomingUtmParamsNew = (queryStringNew!=='') ? parseQuery(queryStringNew): undefined;
+    let firstInteractionUserObject = JSON.parse(firstInteractionUser);
+    if (incomingUtmParamsNew !== undefined) {
+        let finalUtmParamsNew = {
+            ...firstInteractionUserObject,
+            ...incomingUtmParamsNew
+        }
+        setCookie('last_interaction', finalUtmParamsNew, 3600);
+    } else  {
+        setCookie('last_interaction', firstInteractionUserObject, 3600);
+    }
+} else {
+    document.cookie = "session_controller=1; expires=0; path=/;  domain=" + window.location.hostname;
+  //  console.log('You\'re in a new session');
+    if (getCookie('first_interaction') == null) {
+   //     console.log('not');
+        setCookie('first_interaction', finalUtmParams, 3600);
+        setCookie('last_interaction', finalUtmParams, 3600);
+    } else {
+    //    console.log('set');
+        setCookie('last_interaction', finalUtmParams, 3600);
+    }
+}
