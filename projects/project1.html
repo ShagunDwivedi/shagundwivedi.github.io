@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Shagun Dwivedi</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            line-height: 1.6;
+            color: #000;
+            background: #fff6f8;
+            min-height: 100vh;
+            padding: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        /* Pastel Colors */
+        :root {
+            --pastel-pink: #FFE5EC;
+            --pastel-blue: #E5F3FF;
+            --pastel-yellow: #FFF9E5;
+            --pastel-green: #E5FFE5;
+            --pastel-purple: #F3E5FF;
+            --pastel-orange: #FFE5D1;
+            --reddish: rgb(251,105,98);
+            --yellow: #FFD700;
+        }
+        /* Header - Full Screen Width */
+        .header {
+            width: 100vw;
+            display: flex;
+            background: #fff;
+            border-bottom: 1px solid #000;
+            box-shadow: 0 2px 0px #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 80px;
+        }
+        .header-cell {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .header-cell:hover {
+            background-color: #000;
+        }
+        .header-cell:hover .header-cell-content {
+            color: #fff;
+        }
+        .header-cell-content {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            font-size: 16px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+        }
+        .header-cell.logo-cell {
+            flex: 2;
+            justify-content: flex-start;
+            padding-left: 40px;
+        }
+        .header-cell.logo-cell:hover {
+            background-color: #fff;
+        }
+        .header-cell.logo-cell:hover .header-cell-content {
+            color: #000;
+        }
+        .header-cell.logo-cell .header-cell-content {
+            font-size: 28px;
+            font-weight: bold;
+            padding: 0;
+        }
+        .header-cell.resume-cell {
+            background-color: #fff;
+        }
+        .header-cell.resume-cell:hover {
+            background-color: #fff;
+        }
+        .header-cell.resume-cell .header-cell-content {
+            font-weight: 600;
+            background-color: var(--yellow);
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0px #000;
+            border-radius: 3px;
+            padding: 10px 20px;
+        }
+        .header-cell.resume-cell .header-cell-content:hover {
+            background-color: var(--yellow);
+            color: #000;
+            box-shadow: 3px 3px 0px #000;
+        }
+        /* Burger Menu */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: #000;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 1px;
+        }
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            flex-direction: column;
+            padding: 20px;
+            border-top: 1px solid #000;
+            box-shadow: 0 2px 0px #000;
+        }
+        .mobile-nav.active {
+            display: flex;
+        }
+        .mobile-nav .header-cell-content {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            width: 100%;
+            text-align: left;
+        }
+        .mobile-nav .header-cell-content:last-child {
+            border-bottom: none;
+        }
+        .mobile-nav .resume-btn {
+            font-weight: 600;
+            background-color: var(--yellow);
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0px #000;
+            border-radius: 3px;
+            padding: 10px 20px;
+            width: fit-content;
+            margin: 10px auto 0;
+        }
+        .mobile-nav .resume-btn:hover {
+            background-color: var(--yellow);
+            color: #000;
+            box-shadow: 3px 3px 0px #000;
+        }
+        /* Main Content Container */
+        .main-container {
+            margin-top: 80px; /* Height of the header */
+            padding: 40px;
+        }
+        /* Project Details Container */
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            border: 1px solid #000;
+            box-shadow: 2px 2px 0px #000;
+            border-radius: 3px;
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .project-title {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #000;
+            transition: all 0.3s ease;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .back-button:hover {
+            background-color: #f5f5f5;
+            box-shadow: 3px 3px 0px #000;
+        }
+        .back-button svg {
+            width: 16px;
+            height: 16px;
+            stroke: #000;
+        }
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .project-image-card {
+            border: 1px solid #000;
+            box-shadow: 2px 2px 0px #000;
+            border-radius: 3px;
+            background-color: #fff;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-details {
+            width: 100%;
+        }
+        .project-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            font-size: 14px;
+            color: #666;
+            background: var(--pastel-blue);
+            padding: 4px 8px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .project-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .section-content {
+            font-size: 16px;
+            line-height: 1.6;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #000;
+            transition: all 0.3s ease;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .project-link:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: #fff;
+            transition: stroke 0.3s ease;
+        }
+        .project-link:hover svg {
+            stroke: #000;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            .header-cell {
+                display: none;
+            }
+            .header-cell.logo-cell {
+                display: flex;
+                border-bottom: 1px solid #000;
+                padding: 15px 20px;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .burger-menu {
+                display: flex;
+            }
+            .mobile-nav {
+                display: none;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
+            .mobile-nav .header-cell-content {
+                color: #000;
+            }
+            .mobile-nav .header-cell-content:hover {
+                color: #000;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            .project-content {
+                flex-direction: column;
+            }
+            .project-image-card {
+                flex: none;
+                width: 100%;
+            }
+            .project-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Full Screen Width with Navigation -->
+    <header class="header">
+        <div class="header-cell logo-cell">
+            <a href="index.html" class="header-cell-content">Shagun Dwivedi</a>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header-cell">
+            <a href="index.html#about" class="header-cell-content">ABOUT ME</a>
+        </div>
+        <div class="header-cell">
+            <a href="index.html#education" class="header-cell-content">EDUCATION</a>
+        </div>
+        <div class="header-cell">
+            <a href="index.html#projects" class="header-cell-content">PROJECTS</a>
+        </div>
+        <div class="header-cell">
+            <a href="index.html#contact" class="header-cell-content">CONTACT</a>
+        </div>
+        <div class="header-cell resume-cell">
+            <a href="#" class="header-cell-content">RESUME</a>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html#about" class="header-cell-content">About Me</a>
+            <a href="index.html#education" class="header-cell-content">Education</a>
+            <a href="index.html#projects" class="header-cell-content">Projects</a>
+            <a href="index.html#contact" class="header-cell-content">Contact</a>
+            <a href="#" class="header-cell-content resume-btn">resume</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+        <div class="project-container">
+            <div class="project-card">
+                <div class="project-header">
+                    <h1 class="project-title">Project Name</h1>
+                </div>
+                <div class="project-content">
+                    <div class="project-image-card">
+                        <img src="project-image.jpg" alt="Project Image" class="project-image">
+                    </div>
+                    
+                    <div class="project-details">
+                        <p class="project-description">
+                            This is a detailed description of the project. It should provide a comprehensive overview of what the project does, its purpose, and its key features. This section can be longer than the brief description on the main projects page.
+                        </p>
+                        
+                        <div class="tags">
+                            <span class="tag">Technology 1</span>
+                            <span class="tag">Technology 2</span>
+                            <span class="tag">Technology 3</span>
+                            <span class="tag">Technology 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2 class="section-title">Overview</h2>
+                    <div class="section-content">
+                        <p>
+                            This section provides a more detailed overview of the project. You can explain the problem statement, the approach taken, and the overall solution. This is where you can go into depth about the project's background and context.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2 class="section-title">Technical Implementation</h2>
+                    <div class="section-content">
+                        <p>
+                            Describe the technical implementation details here. This can include information about the architecture, algorithms used, data structures, and any other technical aspects of the project. You can also mention challenges faced and how they were overcome.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h2 class="section-title">Results & Impact</h2>
+                    <div class="section-content">
+                        <p>
+                            Share the results and impact of the project here. This can include metrics, user feedback, or any other outcomes that demonstrate the success of the project. You can also discuss lessons learned and future improvements.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        View Live Demo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="project-link">
+                        Source Code
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Burger menu functionality
+        const burgerMenu = document.getElementById('burgerMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        burgerMenu.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+        });
+        // Close menu when clicking on a link
+        const navLinks = mobileNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+            });
+        });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = mobileNav.contains(event.target) || burgerMenu.contains(event.target);
+            if (!isClickInside && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
