@@ -610,6 +610,92 @@
         .project-link:hover svg {
             stroke: #0066cc;
         }
+        /* Publications Section */
+        .publications-section {
+            background: var(--pastel-lavender);
+            padding: 60px 40px;
+            border-top: 1px solid #000;
+        }
+
+        .publications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .publications-header {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #000;
+            text-align: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-card {
+            margin-bottom: 30px;
+        }
+
+        .publication-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-authors {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-venue {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-abstract {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #000;
+            transition: all 0.3s ease;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .publication-link:hover {
+            background-color: #f5f5f5;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .publication-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: #000;
+        }
         /* Contact Section */
         .contact-section {
             background: var(--pastel-mint);
@@ -783,7 +869,7 @@
             <a href="#contact" class="header-cell-content">CONTACT</a>
         </div>
         <div class="header-cell resume-cell">
-            <a href="#" class="header-cell-content">RESUME</a>
+            <a href="https://drive.google.com/file/d/1aGkk9_WSnrxf6Se3-_C24HQTdfSGhEXZ/view" class="header-cell-content">CV</a>
         </div>
         
         <!-- Mobile Navigation -->
@@ -793,7 +879,7 @@
             <a href="#projects" class="header-cell-content">PROJECTS</a>
             <a href="#publications" class="header-cell-content">PUBLICATIONS</a>
             <a href="#contact" class="header-cell-content">CONTACT</a>
-            <a href="#" class="header-cell-content resume-btn">RESUME</a>
+            <a href="https://drive.google.com/file/d/1aGkk9_WSnrxf6Se3-_C24HQTdfSGhEXZ/view" class="header-cell-content resume-btn">CV</a>
         </div>
     </header>
     <!-- Main Content Container -->
@@ -861,9 +947,12 @@
                 <h1 class="intro-header">Hello! I'm Shagun Dwivedi</h1>
                 
                 <div class="intro-content">
-                    <p>I'm an AI Research Associate, with a passion for data, writing systems, languages, and accuracy. Currently, I work at the Centre for Interdisciplinary AI at FLAME University, Pune.</p>
+                    <p>I'm an AI Researcher, with a passion for data, writing systems, languages, and accuracy.
+                        I currently work at the Centre for Interdisciplinary AI, FLAME University, Pune, India.
+                        I have a BS in Data Science and Applications from IIT Madras. I have a BA (Hons) in Ancient Indian History and Archaeology from University of Lucknow. 
+                    </p>
                         
-                    <p>I'm interested in natural language processing, use of language models in machine perception, and evaluation benchmarks for LLMs.</p>
+                    <p>I'm interested in natural language processing, use of language models in machine perception, and evaluation benchmarks/metrics for LLMs.</p>
                     
                     <!-- <p>Perpetually working on improving my chops, one problem at a time.
                     <br>
@@ -914,7 +1003,7 @@
                             <div class="horizontal-line right"></div>
                             <div class="education-year">2025</div>
                             <div class="education-degree">BS in Data Science and Applications, IIT Madras</div>
-                            <div class="education-school">CGPA : 9.01</div>
+                            <div class="education-school">CGPA : 9.04</div>
                         </div>
                         
                         <div class="education-item">
@@ -922,7 +1011,7 @@
                             <div class="horizontal-line right"></div>
                             <div class="education-year">2023</div>
                             <div class="education-degree">BA (Hons.) in Ancient Indian History and Archaeology, University of Lucknow</div>
-                            <div class="education-school">CGPA: 8.04</div>
+                            <div class="education-school">CGPA: 8.02</div>
                         </div>
                         
                         <div class="education-item">
@@ -956,10 +1045,10 @@
                     <!-- Left Sidebar - Stays Fixed -->
                     <div class="projects-sidebar">
                         <div class="domains border-block inner-border-block_type-2">
-                            <p>Projects cover the domains:</p>
+                            <p>I have primarily worked on:</p>
                             <div class="domain-list">
-                                <span class="domain-item">Machine Learning</span>
-                                <span class="domain-item">Data Analytics</span>
+                                <span class="domain-item">Natural Language Processing</span>
+                                <span class="domain-item">Optical Character Recognition</span>
                                 <span class="domain-item">Web Development</span>
                             </div>
                         </div>
@@ -967,6 +1056,98 @@
                     
                     <!-- Right Content - Scrollable -->
                     <div class="projects-content">
+                        <div class="project border-block inner-border-block_type-1">
+                            <h2 class="project-title">Analysis of different Tokenizers and their effect on Downstream tasks for Hindi and Marathi</h2>
+                            <p class="project-description">Evaluation of various subword tokenization methods and their impact on language modeling performance for Hindi and Marathi.</p>
+                            <div class="tags">
+                                <span class="tag">HuggingFace Transformers</span>
+                                <span class="tag">LLM Evaluation</span>
+                                <span class="tag">Question Answering</span>
+                                <span class="tag">Grapheme to Phoneme</span>
+                                <span class="tag more">+ MORE</span>
+                            </div>
+                            <p class="project-details">Proposing a method of tokenization, which could help reduce the issue of sub-optimal tokenization with over-segmentation of text in Indic languages and its effect on a language modeling (using T5).</p>
+                            <a href="#" class="project-link">MANUSCRIPT IN REVIEW
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg> -->
+                            </a>
+                        </div>
+
+                        <div class="projects-content">
+                        <div class="project border-block inner-border-block_type-1">
+                            <h2 class="project-title">Downscaling Terrestrial Water Storage Anomalies</h2>
+                            <p class="project-description">Algorithm that produces a higher spatial resolution TWSA using 6 months of precipitation and temperature.</p>
+                            <div class="tags">
+                                <span class="tag">Remote Sensing</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Statistics</span>
+                                <span class="tag more">+ MORE</span>
+                            </div>
+                            <p class="project-details">Implemented a neighborhood-weighted iterative optimization algorithm to downscale TWSA from 3°×3° to 0.1°×0.1° resolution achieving better RMSE and spatial frequency scores than GLDAS estimates.</p>
+                            <a href="#" class="project-link">MANUSCRIPT IN PREPARATION
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg> -->
+                            </a>
+                        </div>
+                        
+                        <div class="project border-block inner-border-block_type-1">
+                            <h2 class="project-title">Converting Custom-Embedded Subsetted Non-Unicode Fonts to Searchable Formats</h2>
+                            <p class="project-description">Extracting Indic text from non-Unicode standard PDFs with embedded fonts to a searchable and Unicode-compliant format.</p>
+                            <div class="tags">
+                                <span class="tag">Computational Linguistics</span>
+                                <span class="tag">Optical Character Recognition</span>
+                                <span class="tag">Low Resource Scripts</span>
+                                <span class="tag more">+ MORE</span>
+                            </div>
+                            <p class="project-details">Expanding on previously published case study in Gujarati by including Hindi, Marathi, and Bangla documents.</p>
+                            <!-- <a href="https://github.com/ShagunDwivedi/MarketingStrategy-PersonalisedOffer" class="project-link">GO TO PROJECT
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a> -->
+                        </div>
+
+                        <div class="project border-block inner-border-block_type-1">
+                            <h2 class="project-title">Handwritten Text Recognition for Pre-Colonial Sanskrit manuscripts</h2>
+                            <p class="project-description">Digitizing manuscripts on Vedanta and Mimansa to make them searchable.</p>
+                            <div class="tags">
+                                <span class="tag">Optical Character Recognition</span>
+                                <span class="tag">Finetuning</span>
+                                <span class="tag">Evaluation Metrics</span>
+                                <span class="tag more">+ MORE</span>
+                            </div>
+                            <p class="project-details">Finetuned a Resnet-BiLSTM-CTC model for handwritten manuscripts which outperforms out-of-the-box HTR models on grapheme cluster error rate and character error rate.</p>
+                            <a href="https://kartikchincholikar.github.io/sanskrit-ocr/" class="project-link" target="_blank">GO TO PROJECT
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="project border-block inner-border-block_type-1">
+                            <h2 class="project-title">AI Language Practice Applications for French and German</h2>
+                            <p class="project-description">Platform for beginner French 101 and German 101 courses' practice customised to university course syllabi.</p>
+                            <div class="tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-Learn</span>
+                                <span class="tag more">+ MORE</span>
+                            </div>
+                            <p class="project-details">Designed multi-agent system supported by various custom prompt-engineered OpenAI bots for the dialog framework. Presented at AIET 2025.</p>
+                            <a href="https://flame-cai.github.io/french_AI_bot/" class="project-link" target="_blank">GO TO PROJECT
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
                         <div class="project border-block inner-border-block_type-1">
                             <h2 class="project-title">Customer Behavior Prediction</h2>
                             <p class="project-description">Predicting user behaviour based on the restaurant's offers.</p>
@@ -977,7 +1158,7 @@
                                 <span class="tag more">+ MORE</span>
                             </div>
                             <p class="project-details">Performed preprocessing, trained and validated and evaluated multiple supervised classification models and decided on the best prediction model.</p>
-                            <a href="#" class="project-link">GO TO PROJECT
+                            <a href="https://github.com/ShagunDwivedi/MarketingStrategy-PersonalisedOffer" class="project-link" target="_blank">GO TO PROJECT
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"></line>
                                     <polyline points="7 7 17 7 17 17"></polyline>
@@ -994,7 +1175,7 @@
                                 <span class="tag more">+ MORE</span>
                             </div>
                             <p class="project-details">Access brief or detailed weather report based on station's name. Get forecast for the next seven days.</p>
-                            <a href="#" class="project-link">GO TO PROJECT
+                            <a href="https://github.com/ShagunDwivedi/IndianWeatherAPI" class="project-link" target="_blank">GO TO PROJECT
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"></line>
                                     <polyline points="7 7 17 7 17 17"></polyline>
@@ -1010,7 +1191,7 @@
                                 <span class="tag">Strategy Development</span>
                             </div>
                             <p class="project-details">Case study ranked first under Winter Consulting'22, IIT Guwahati. Conducted extensive market research, formulated strategies for airline's improvement based on the growth strategy framework.</p>
-                            <a href="#" class="project-link">GO TO PROJECT
+                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ2v1QQOez6Ou2cgIuwgNZQUhvYtSSqdXP6owazbbRYJGf4EecOV0sHbei-Ok5bFNJZ1wQETaUfJW5a/pub?start=false&loop=false&delayms=3000&slide=id.g123f572be1b_0_0" class="project-link" target="_blank">GO TO PROJECT
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"></line>
                                     <polyline points="7 7 17 7 17 17"></polyline>
@@ -1029,7 +1210,7 @@
                                 <span class="tag more">+ MORE</span>
                             </div>
                             <p class="project-details">TrackOn is a web application used for tracking habits, activities, other life parameters. Users can register &amp; login to create multiple trackers with multiple logs. They can review their progress over time with graphs trend lines.</p>
-                            <a href="#" class="project-link">GO TO PROJECT
+                            <a href="https://github.com/ShagunDwivedi/TrackOnToo" class="project-link" target="_blank">GO TO PROJECT
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"></line>
                                     <polyline points="7 7 17 7 17 17"></polyline>
@@ -1038,6 +1219,124 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="publications-section">
+            <div class="publications-container">
+                <h2 class="publications-header">Publications</h2>
+                
+                <div class="publication-card border-block inner-border-block_type-1">
+                    <h3 class="publication-title">A Case Study of Handwritten Text Recognition from Pre-Colonial era Sanskrit Manuscripts</h3>
+                    <div class="publication-authors">Kartik Chincholikar, Shagun Dwivedi, Kaushik Gopalan, Tarinee Awasthi</div>
+                    <div class="publication-venue">World Sanskrit Conference, 2025</div>
+                    <div class="publication-abstract">
+                        This paper presents a comprehensive study on applying handwritten text recognition techniques to pre-colonial era Sanskrit manuscripts. We discuss the challenges unique to these historical documents and our approach to achieving high accuracy in recognition.
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://aclanthology.org/2025.wsc-csdh.4/" target="_blank" class="publication-link">
+                            PDF
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="publication-link">
+                            DOI
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a> -->
+                        <!-- <a href="#" class="publication-link">
+                            Citation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="publication-card border-block inner-border-block_type-1">
+                    <h3 class="publication-title">A Semi-Automatic Text Recognition Tool for Pre-Colonial Handwritten Manuscripts in Devanāgari Script</h3>
+                    <div class="publication-authors">Bharath Valaboju, Shagun Dwivedi, Kartik Chincholikar, Kaushik Gopalan, Vinod Vidwans</div>
+                    <div class="publication-venue">International Conference on Human-Computer Interaction, 2025</div>
+                    <div class="publication-abstract">
+                        This poster presents an annotation tool which allows the user to extract text from undigitized manuscripts using OCR, following which users can make corrections to the OCR-detected text. 
+                    </div>
+                    <div class="publication-links">
+                        <!-- <a href="#" class="publication-link">
+                            PDF
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </a> -->
+                        <a href="https://doi.org/10.1007/978-3-031-94171-9_13" class="publication-link">
+                            DOI
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="publication-link">
+                            Citation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="publication-card border-block inner-border-block_type-1">
+                    <h3 class="publication-title">Converting Gujarati Text in Custom-Embedded Subsetted Non-unicode Fonts to Searchable Formats: A Case Study Using Jain Religious Texts</h3>
+                    <div class="publication-authors">Rishav Jain, Shagun Dwivedi, Kaushik Gopalan</div>
+                    <div class="publication-venue">International Conference on Computer Vision and Image Processing, 2024</div>
+                    <div class="publication-abstract">
+                        This study presents a novel approach for extracting Gujarati text from non-Unicode standard PDFs with embedded fonts, addressing the challenges posed by these legacy fonts and providing a pathway to convert and preserve such documents in a searchable, Unicode-compliant format.  
+                    </div>
+                    <div class="publication-links">
+                        <!-- <a href="#" class="publication-link">
+                            PDF
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </a> -->
+                        <a href="https://doi.org/10.1007/978-3-031-93694-4_26" class="publication-link">
+                            DOI
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="publication-link">
+                            Citation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <!-- Add more publication cards here -->
+                
             </div>
         </section>
         <!-- Contact Section -->
