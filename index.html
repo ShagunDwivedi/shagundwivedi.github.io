@@ -53,6 +53,36 @@
             --pastel-dusk: #D7CCC8;
             --pastel-dawn: #FFCCBC;
         }
+
+        /* ===================== NAME SLOT MACHINE ===================== */
+        .name-slot {
+            display: inline-block;
+            overflow: hidden;
+            height: 1.8em;
+            vertical-align: middle;
+            position: relative;
+            top: -0.05em;
+            /* fade out top and bottom edges */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+        }
+ 
+        .name-slot-track {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.55s cubic-bezier(0.25, 0.85, 0.45, 1);
+            will-change: transform;
+            padding-top: 0.4em;
+        }
+ 
+        .name-slot-track span {
+            display: block;
+            white-space: nowrap;
+            height: 1em;
+            line-height: 1em;
+            margin-bottom: 0.8em;
+        }
+
         /* Header - Full Screen Width */
         .header {
             width: 100vw;
@@ -847,7 +877,17 @@
     <!-- Header - Full Screen Width with Navigation -->
     <header class="header">
         <div class="header-cell logo-cell">
-            <a href="#" class="header-cell-content">Shagun Dwivedi</a>
+            <a href="#" class="header-cell-content">
+                <span class="name-slot">
+                    <span class="name-slot-track">
+                        <span>Shagun Dwivedi</span>
+                        <span>शगुन द्विवेदी</span>
+                        <span>𑌶𑌗𑍁𑌨 𑌦𑍍𑌵𑌿𑌵𑍇𑌦𑌿</span>
+                        <span>Шагун Двиведи</span>
+                        <span>Shagun Dwivedi</span>
+                    </span>
+                </span>
+            </a>
             <div class="burger-menu" id="burgerMenu">
                 <span></span>
                 <span></span>
@@ -1398,6 +1438,24 @@
                 mobileNav.classList.remove('active');
             }
         });
+
+        // Slot machine name scroller
+        const track = document.querySelector('.name-slot-track');
+        const names = track.querySelectorAll('span');
+        const count = names.length;
+        let current = 0;
+ 
+        setInterval(() => {
+            current++;
+            if (current < count) {
+                track.style.transition = 'transform 0.55s cubic-bezier(0.25, 0.85, 0.45, 1)';
+                track.style.transform = 'translateY(-' + (current * 1.8) + 'em)';
+            } else {
+                track.style.transition = 'none';
+                track.style.transform = 'translateY(0)';
+                current = 0;
+            }
+        }, 2200);
         
         // Education navigation buttons functionality
         const educationScrollable = document.querySelector('.education-scrollable');
