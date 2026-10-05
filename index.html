@@ -1,1512 +1,873 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="YeCIZJY44HAmuLd3vtFdAQeMVTCJLGlztQM_GSGVLo8" />
-    <title>Shagun Dwivedi</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            line-height: 1.6;
-            color: #000;
-            background: linear-gradient(135deg, #FFE5EC 0%, #E5F3FF 50%, #FFF9E5 100%);
-            min-height: 100vh;
-            padding: 0;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        /* Pastel Colors */
-        :root {
-            --pastel-pink: #FFE5EC;
-            --pastel-blue: #E5F3FF;
-            --pastel-yellow: #FFF9E5;
-            --pastel-green: #E5FFE5;
-            --pastel-purple: #F3E5FF;
-            --pastel-orange: #FFE5D1;
-            --reddish: rgb(251, 151, 145);
-            --yellow: #FFD700;
-            /* Additional Pastel Colors to add to your :root section */
-            --pastel-mint: #ddf0e8;
-            --pastel-lavender: #E6E6FA;
-            --pastel-coral: #FFDAB9;
-            --pastel-sky: #B0E0E6;
-            --pastel-rose: #FFE4E1;
-            --pastel-sage: #B2DFDB;
-            --pastel-peach: #FFDAB9;
-            --pastel-lilac: #E8D5F2;
-            --pastel-aqua: #D1F2EB;
-            --pastel-citrus: #FFF9C4;
-            --pastel-berry: #F8BBD0;
-            --pastel-sand: #F5E6D3;
-            --pastel-frost: #E1F5FE;
-            --pastel-herb: #DCEDC8;
-            --pastel-blush: #FFCDD2;
-            --pastel-dream: #E1BEE7;
-            --pastel-ocean: #B3E5FC;
-            --pastel-sun: #FFF9C4;
-            --pastel-mist: #F0F4C3;
-            --pastel-dusk: #D7CCC8;
-            --pastel-dawn: #FFCCBC;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shagun Dwivedi</title>
+<meta name="description" content="Shagun Dwivedi is an AI researcher working on NLP and language modelling for morphologically complex and low-resource languages using computational linguistics.">
+<meta name="author" content="Shagun Dwivedi">
+<meta name="theme-color" content="#17130f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shagun Dwivedi">
+<meta property="og:description" content="Shagun Dwivedi is an AI researcher working on NLP and language modelling for morphologically complex and low-resource languages using computational linguistics.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shagun Dwivedi">
+<meta name="twitter:description" content="Shagun Dwivedi is an AI researcher working on NLP and language modelling for morphologically complex and low-resource languages using computational linguistics.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 
-        /* ===================== NAME SLOT MACHINE ===================== */
-        .name-slot {
-            display: inline-block;
-            overflow: hidden;
-            height: 1.8em;
-            vertical-align: middle;
-            position: relative;
-            top: -0.05em;
-            /* fade out top and bottom edges */
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-        }
- 
-        .name-slot-track {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.55s cubic-bezier(0.25, 0.85, 0.45, 1);
-            will-change: transform;
-            padding-top: 0.4em;
-        }
- 
-        .name-slot-track span {
-            display: block;
-            white-space: nowrap;
-            height: 1em;
-            line-height: 1em;
-            margin-bottom: 0.8em;
-        }
+<link rel="canonical" href="https://shagundwivedi.github.io/">
+<meta property="og:url" content="https://shagundwivedi.github.io/">
+<!-- <meta property="og:image" content="https://shagundwivedi.github.io/preview.jpg"> -->
+<meta name="google-site-verification" content="YeCIZJY44HAmuLd3vtFdAQeMVTCJLGlztQM_GSGVLo8">
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<noscript><style>.reveal{ opacity:1; transform:none; }</style></noscript>
+<style>
+  :root{
+    --desk:       #17130f;   /* dark surrounding desk — brutalist contrast */
+    --paper:      #d9d1bd;   /* neutral warm stone — folder body, kept quiet */
+    --paper-light:#f8f5ec;   /* cream card / sticky-note base */
+    --ink:        #1a1712;   /* near-black ink */
+    --red:        #a8362b;   /* muted brick red */
+    --indigo:     #283f63;   /* muted navy */
+    --saffron:    #c98a34;   /* muted ochre — used sparingly */
+    --magenta:    #8c3060;   /* muted plum */
+    --teal:       #1f5c53;   /* muted deep teal */
+    --rule:       rgba(26,23,18,0.25);
 
-        /* Header - Full Screen Width */
-        .header {
-            width: 100vw;
-            display: flex;
-            background: #fff;
-            border-bottom: 1px solid #000;
-            box-shadow: 0 2px 0px #000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            height: 80px;
-        }
-        .header-cell {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .header-cell:hover {
-            background-color: #000;
-        }
-        .header-cell:hover .header-cell-content {
-            color: #fff;
-        }
-        .header-cell-content {
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-            font-size: 16px;
-            font-family: 'IBM Plex Sans', sans-serif;
-            transition: color 0.3s ease;
-            text-align: center;
-            padding: 10px;
-        }
-        .header-cell.logo-cell {
-            flex: 2;
-            justify-content: flex-start;
-            padding-left: 40px;
-        }
-        .header-cell.logo-cell:hover {
-            background-color: #fff;
-        }
-        .header-cell.logo-cell:hover .header-cell-content {
-            color: #000;
-        }
-        .header-cell.logo-cell .header-cell-content {
-            font-size: 28px;
-            font-weight: bold;
-            padding: 0;
-        }
-        .header-cell.resume-cell {
-            background-color: #fff;
-        }
-        .header-cell.resume-cell:hover {
-            background-color: #fff;
-        }
-        .header-cell.resume-cell .header-cell-content {
-            font-weight: 600;
-            background-color: var(--yellow);
-            border: 2px solid #000;
-            box-shadow: 2px 2px 0px #000;
-            border-radius: 3px;
-            padding: 10px 20px;
-        }
-        .header-cell.resume-cell .header-cell-content:hover {
-            background-color: var(--yellow);
-            color: #000;
-            box-shadow: 3px 3px 0px #000;
-        }
-        /* Burger Menu */
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .burger-menu span {
-            width: 25px;
-            height: 3px;
-            background: #000;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 1px;
-        }
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            flex-direction: column;
-            padding: 20px;
-            border-top: 1px solid #000;
-            box-shadow: 0 2px 0px #000;
-        }
-        .mobile-nav.active {
-            display: flex;
-        }
-        .mobile-nav .header-cell-content {
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0;
-            width: 100%;
-            text-align: left;
-        }
-        .mobile-nav .header-cell-content:last-child {
-            border-bottom: none;
-        }
-        .mobile-nav .resume-btn {
-            font-weight: 600;
-            background-color: var(--yellow);
-            border: 2px solid #000;
-            box-shadow: 2px 2px 0px #000;
-            border-radius: 3px;
-            padding: 10px 20px;
-            width: fit-content;
-            margin: 10px auto 0;
-        }
-        .mobile-nav .resume-btn:hover {
-            background-color: var(--yellow);
-            color: #000;
-            box-shadow: 3px 3px 0px #000;
-        }
-        /* Main Content Container */
-        .main-container {
-            margin-top: 80px; /* Height of the header */
-        }
-        /* Split Screen Layout */
-        .split-screen {
-            display: flex;
-            min-height: calc(100vh - 80px); /* Full height minus header */
-        }
-        /* Left Section - White */
-        .left-section {
-            flex: 1;
-            background-color: #fff;
-            padding: 40px;
-            border-right: 1px solid #000;
-            overflow-y: auto;
-        }
-        /* Right Section - Reddish */
-        .right-section {
-            flex: 1;
-            background-color: var(--reddish);
-            padding: 40px;
-            overflow-y: auto;
-        }
-        /* Updates Section */
-        .updates-header {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #000;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .update-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .update-date {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 5px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .update-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .update-content {
-            font-size: 16px;
-            color: #333;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+    --display: 'Archivo Black', sans-serif;
+    --serif:   'Source Serif 4', serif;
+    --mono:    'JetBrains Mono', monospace;
+  }
 
-        .update-link {
-            display: inline-flex;
-            align-items: center;
-            margin-left: 8px;
-            text-decoration: none;
-            vertical-align: middle;
-            position: relative;
-            top: -2px;
-        }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body{
+    margin:0;
+    background-color:var(--desk);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size:32px 32px;
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:clip;           /* tilted cards/shadows never cause sideways scroll */
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  ::selection{ background:var(--red); color:var(--paper-light); }
 
-        .update-link svg {
-            width: 16px;
-            height: 16px;
-            stroke: #333;
-            transition: stroke 0.3s ease;
-        }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,48px); }
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--red);
+  }
+  .section-title{
+    font-family:var(--display); font-size:clamp(28px,4.4vw,44px);
+    line-height:1.02; letter-spacing:-.01em; margin:6px 0 0;
+  }
+  .hairline{ border:none; border-top:1.5px solid var(--ink); margin:0; }
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
 
-        .update-link:hover svg {
-            stroke: #839491;
-        }
-        /* Links Section */
-        .links-header {
-            font-size: 28px;
-            font-weight: bold;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #000;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .links-list {
-            list-style-type: none;
-        }
-        .links-list li {
-            margin-bottom: 15px;
-        }
-        .links-list a {
-            text-decoration: none;
-            color: #000;
-            font-size: 18px;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .links-list a:hover {
-            border-bottom-color: #000;
-        }
-        /* Intro Section */
-        .intro-header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            text-align: center;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .intro-content {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .intro-content p {
-            margin-bottom: 20px;
-        }
-        .intro-highlights {
-            margin-top: 40px;
-        }
-        .highlight-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid #000;
-        }
-        .highlight-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .highlight-content {
-            font-size: 16px;
-            color: #333;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        /* Education Section - Separate Section */
-        .education-section {
-            background: #E8EEFF;
-            padding: 60px 40px;
-            border-top: 1px solid #000;
-        }
-        .education-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .education-header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
-            text-align: center;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        /* Education Navigation Buttons */
-        .education-nav-buttons {
-            position: absolute;
-            top: 20px;
-            right: 0;
-            display: flex;
-            gap: 10px;
-        }
-        .education-nav-btn {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #000;
-            background-color: #E8EEFF;
-            border-radius: 3px;
-            box-shadow: 2px 2px 0px #000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .education-nav-btn:hover {
-            box-shadow: 3px 3px 0px #000;
-            background-color: #E8EEFF;
-        }
-        .education-nav-btn:active {
-            box-shadow: 1px 1px 0px #000;
-            transform: translate(1px, 1px);
-        }
-        .education-nav-btn svg {
-            color: #000;
-        }
-        .education-scrollable {
-            overflow-x: auto;
-            overflow-y: hidden;
-            position: relative;
-            padding-bottom: 60px;
-            /* Hide scrollbar for Chrome, Safari and Opera */
-            scrollbar-width: none;  /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
-        }
-        .education-scrollable::-webkit-scrollbar {
-            display: none;  /* Chrome, Safari and Opera */
-        }
-        .education-grid {
-            display: flex;
-            flex-direction: row;
-            gap: 80px;
-            position: relative;
-            min-width: max-content;
-            padding: 0 40px;
-        }
-        /* Modify the education item positioning */
-        .education-item {
-            padding: 25px;
-            border: 1px solid #000;
-            box-shadow: 2px 2px 0px #000;
-            border-radius: 3px;
-            background-color: #fff;
-            width: 300px;
-            position: relative;
-            flex-shrink: 0;
-        }
-        /* Vertical connector line */
-        .education-item::after {
-            content: '';
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 40px;
-            background-color: #000;
-            z-index: 1;
-        }
-        /* Connection circle */
-        .education-item::before {
-            content: '';
-            position: absolute;
-            bottom: -44px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
-            background-color: #E8EEFF;
-            border: 2px solid #000;
-            border-radius: 50%;
-            z-index: 3;
-        }
-        /* Add horizontal extensions */
-        .education-item .horizontal-line {
-            position: absolute;
-            bottom: -39px;
-            height: 2px;
-            background-color: #000;
-            z-index: 2;
-        }
-        .education-item .horizontal-line.left {
-            right: 50%;
-            width: 90%;
-        }
-        .education-item .horizontal-line.right {
-            left: 50%;
-            width: 90%;
-        }
-        /* Remove horizontal line from first item's left side */
-        .education-item:first-child .horizontal-line.left {
-            display: none;
-        }
-        /* Remove horizontal line from last item's right side */
-        .education-item:last-child .horizontal-line.right {
-            display: none;
-        }
-        .education-year {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #666;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .education-degree {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .education-school {
-            font-size: 16px;
-            color: #333;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        /* Timeline line */
-        .education-timeline {
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            z-index: 1;
-        }
-        /* Projects Section */
-        .projects-section {
-            background: #FCF6E8;
-            padding: 60px 40px;
-        }
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .projects-header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
-            text-align: center;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .projects-grid {
-            display: flex;
-            gap: 30px;
-        }
-        .projects-sidebar {
-            flex: 0 0 300px;
-            position: sticky;
-            top: 120px;
-            height: fit-content;
-        }
-        .projects-content {
-            flex: 1;
-        }
-        .domains {
-            margin-bottom: 0;
-        }
-        .domains p {
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .domain-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .domain-item {
-            position: relative;
-            padding-left: 15px;
-            font-size: 16px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .domain-item::before {
-            content: "*";
-            position: absolute;
-            left: 0;
-        }
-        .project {
-            margin-bottom: 40px;
-        }
-        .project-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .project-description {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 15px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .tag {
-            font-size: 14px;
-            color: #666;
-            background: var(--pastel-blue);
-            padding: 4px 8px;
-            border-radius: 3px;
-            border: 1px solid #000;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .tag.more {
-            color: #666;
-            /* font-weight: 500; */
-            background: var(--pastel-blue);
-        }
-        .project-details {
-            font-size: 16px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            background: #fff;
-            padding: 15px;
-            border-left: 3px solid #000;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            /* border: 1px solid #000; */
-            transition: all 0.3s ease;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .project-link:hover {
-            background-color: #fff;
-            color: #000;
-        }
-        .project-link svg {
-            width: 16px;
-            height: 16px;
-            stroke: #000;
-            transition: stroke 0.3s ease;
-        }
+  /* ================= FOLDER SHELL ================= */
+  .folder-wrap{ max-width:1280px; margin:0 auto; padding:22px 18px 60px; }
 
-        .project-link:hover svg {
-            stroke: #0066cc;
-        }
-        /* Publications Section */
-        .publications-section {
-            background: var(--pastel-lavender);
-            padding: 60px 40px;
-            border-top: 1px solid #000;
-        }
+  header.site{ position:sticky; top:0; z-index:60; background:var(--desk); padding-top:6px; }
+  .navbar{
+    display:flex; align-items:flex-end; justify-content:flex-end; gap:16px;
+    padding:0 clamp(4px,2vw,26px);
+  }
+  nav.tabs{ display:flex; gap:8px; min-width:0; margin-left:auto; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  nav.tabs::-webkit-scrollbar{ display:none; }
+  nav.tabs a{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.07em;
+    text-transform:uppercase; text-decoration:none; font-weight:700;
+    color:var(--ink);
+    padding:11px 20px 14px;
+    clip-path:polygon(10% 0,90% 0,100% 100%,0% 100%);
+    border:2px solid var(--ink); border-bottom:none;
+    transform:translateY(5px);
+    transition:transform .18s ease;
+    white-space:nowrap;
+  }
+  nav.tabs a:hover{ transform:translateY(0); }
+  nav.tabs a:nth-child(1){ background:var(--saffron); }
+  nav.tabs a:nth-child(2){ background:var(--red); color:var(--paper-light); }
+  nav.tabs a:nth-child(3){ background:var(--indigo); color:var(--paper-light); }
+  nav.tabs a:nth-child(4){ background:var(--magenta); color:var(--paper-light); }
+  nav.tabs a:nth-child(5){ background:var(--teal); color:var(--paper-light); }
 
-        .publications-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  .folder-body{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    box-shadow:12px 12px 0 var(--ink);
+    position:relative;
+  }
+  .folder-body::before{ /* subtle paper grain */
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(0deg, rgba(26,23,18,0.035) 0 1px, transparent 1px 3px);
+    pointer-events:none;
+  }
 
-        .publications-header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
-            text-align: center;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+  section{ border-bottom:2.5px solid var(--ink); position:relative; }
+  section:last-of-type{ border-bottom:none; }
+  section[id]{ scroll-margin-top:70px; }   /* anchors don't hide under the sticky header */
 
-        .publication-card {
-            margin-bottom: 30px;
-        }
+  .sec-head{ padding:44px 0 20px; }
+  .sec-head .eyebrow{ display:block; margin-bottom:2px; }
 
-        .publication-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 12px;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+  /* ================= ABOUT + INTRO (merged) ================= */
+  .intro-grid{
+    display:grid; grid-template-columns:1.55fr 1fr; gap:44px;
+    padding:52px 0 50px; align-items:start;
+  }
+  .intro-grid > *{ min-width:0; }   /* grid children may shrink instead of overflowing */
+  /* square ID-style photo, now sitting beside the bio — like a passport stamp */
+  .id-photo{
+    width:196px; height:196px; flex-shrink:0;
+    border:3px solid var(--ink);
+    background:var(--paper-light);
+    padding:8px 8px 0;
+    transform:rotate(-3deg);
+    box-shadow:7px 9px 0 rgba(0,0,0,.22);
+  }
+  .id-photo img{
+    width:100%; height:calc(100% - 26px); object-fit:cover;
+    display:block; filter:grayscale(.15) contrast(1.05);
+    background:var(--paper);
+  }
+  .id-photo .id-caption{
+    display:block; text-align:center;
+    font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+    padding:5px 0; color:var(--ink);
+  }
+  /* photo + bio side by side */
+  .bio-row{ display:flex; align-items:flex-start; gap:32px; margin-top:18px; }
+  .bio-row .id-photo{ margin-top:6px; }
+  .bio-row .bio{ flex:1; min-width:0; }
+  .bio-row .bio p:first-child{ margin-top:0; }
 
-        .publication-authors {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #333;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+  /* photo with the name pronunciation underneath */
+  .photo-col{
+    display:flex; flex-direction:column; align-items:center;
+    width:196px; flex-shrink:0;
+  }
+  .pron{
+    margin-top:20px;               /* clears the tilted photo and its shadow */
+    font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+    color:var(--indigo); text-align:center;
+    width:100%;
+  }
 
-        .publication-venue {
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 15px;
-            color: #555;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+  h1.name{
+    font-family:var(--display); font-size:clamp(32px,7vw,52px);
+    line-height:.94; letter-spacing:-.015em; margin:0 0 4px;
+  }
+  h1.name span{ color:var(--red); }
+  .tagline{
+    font-family:var(--serif); font-style:italic;
+    font-size:clamp(17px,2vw,20px); max-width:48ch; margin:0 0 22px;
+  }
+  .bio p{ font-size:15px; max-width:60ch; }
+  .dropcap{
+    float:left; font-family:var(--display); font-size:68px; line-height:.78;
+    padding:6px 10px 0 4px; margin:2px 12px 0 0;
+    color:var(--paper-light); background:var(--red);
+    border:2px solid var(--ink); box-shadow:5px 5px 0 var(--saffron);
+  }
+  .marginal{
+    font-family:var(--mono); font-size:11px; color:var(--indigo);
+    border-left:1.5px dashed var(--indigo); padding-left:10px; margin:18px 0;
+  }
+  .field-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .field-tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:.03em;
+    padding:6px 11px; border:1.5px solid var(--ink); background:var(--paper-light);
+  }
+  .field-tag:nth-child(5n+1){ background:var(--teal); color:var(--paper-light); }
+  .field-tag:nth-child(5n+2){ background:var(--paper-light); }
+  .field-tag:nth-child(5n+3){ background:var(--magenta); color:var(--paper-light); }
+  .field-tag:nth-child(5n+4){ background:var(--teal); color:var(--paper-light); }
 
-        .publication-abstract {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #333;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
 
-        .publication-links {
-            display: flex;
-            gap: 15px;
-        }
+  .contact-list{ display:flex; flex-direction:column; gap:8px; margin-bottom:24px; }
+  .contact-pill{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:12.5px; text-decoration:none;
+    padding:9px 14px; border:1.5px solid var(--ink); background:var(--paper-light);
+    width:fit-content; max-width:100%;
+    overflow-wrap:anywhere;          /* long email / handles wrap instead of overflowing */
+  }
+  .contact-pill:hover{ background:var(--teal); color:var(--paper-light); }
+  .contact-pill b{ color:var(--red); font-weight:700; }
 
-        .publication-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 6px 12px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border: 1px solid #000;
-            transition: all 0.3s ease;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
+  .sidebar-card{ font-family:var(--mono); font-size:12.5px; border-top:1.5px dashed var(--rule); padding-top:16px; }
+  .sidebar-card h4{ font-family:var(--display); font-size:12px; letter-spacing:.04em; margin:0 0 8px; }
+  .sidebar-card p{ margin:0 0 14px; }
 
-        .publication-link:hover {
-            background-color: #f5f5f5;
-            box-shadow: 3px 3px 0px #000;
-        }
+  /* ================= UPDATES ================= */
+  .updates-list{ padding:0 0 50px; }
+  .update-row{
+    display:grid; grid-template-columns:96px 1fr; gap:20px; align-items:center;
+    padding:16px 0; border-top:1.5px dashed var(--rule);
+  }
+  .update-row > *{ min-width:0; }
+  .update-row:last-child{ border-bottom:1.5px dashed var(--rule); }
+  .date-badge{
+    width:84px; height:84px; border-radius:50%;
+    border:2px solid var(--ink); display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+    font-family:var(--mono); background:var(--paper-light); flex-shrink:0;
+    box-shadow:4px 5px 0 rgba(0,0,0,.2);
+  }
+  .update-row:nth-child(3n+1) .date-badge{ background:var(--teal); color:var(--paper-light); transform:rotate(-4deg); }
+  .update-row:nth-child(3n+2) .date-badge{ background:var(--indigo); color:var(--paper-light); transform:rotate(3deg); }
+  .update-row:nth-child(3n) .date-badge{ background:var(--magenta); color:var(--paper-light); transform:rotate(-2deg); }
+  .date-badge b{ font-family:var(--display); font-size:16px; line-height:1; }
+  .date-badge small{ font-size:9.5px; letter-spacing:.06em; }
+  .update-tag{
+    display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.07em;
+    text-transform:uppercase; border:1px solid var(--ink); padding:2px 7px; margin-right:8px;
+    background:var(--paper-light);
+  }
 
-        .publication-link svg {
-            width: 16px;
-            height: 16px;
-            stroke: #000;
-        }
-        /* Contact Section */
-        .contact-section {
-            background: var(--pastel-mint);
-            padding: 60px 40px;
-            border-top: 1px solid #000;
-        }
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact-header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
-            display: inline-block;
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .contact-methods {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: var(--pastel-mint);
-        }
-        .contact-method {
-            width: 50px;
-            height: 50px;
-            border: 1px solid #000;
-            background-color: var(--pastel-mint);
-            border-radius: 3px;
-            box-shadow: 2px 2px 0px #000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            padding: 0;
-        }
+  /* ================= PUBLICATIONS ================= */
+  .pub-list{ position:relative; padding:10px 0 40px; }
+  .pub-row{
+    position:relative;
+    background:var(--paper-light);
+    padding:24px 18px 20px;
+    clip-path:polygon(0.0% 0,2.27% 0,4.55% 0,6.82% 0,9.09% 0,11.36% 0,13.64% 0,15.91% 0,18.18% 0,20.45% 0,22.73% 0,25.0% 0,27.27% 0,29.55% 0,31.82% 0,34.09% 0,36.36% 0,38.64% 0,40.91% 0,43.18% 0,45.45% 0,47.73% 0,50.0% 0,52.27% 0,54.55% 0,56.82% 0,59.09% 0,61.36% 0,63.64% 0,65.91% 0,68.18% 0,70.45% 0,72.73% 0,75.0% 0,77.27% 0,79.55% 0,81.82% 0,84.09% 0,86.36% 0,88.64% 0,90.91% 0,93.18% 0,95.45% 0,97.73% 0,100.0% 0,100.0% 100%,97.73% 100%,95.45% 100%,93.18% 100%,90.91% 100%,88.64% 100%,86.36% 100%,84.09% 100%,81.82% 100%,79.55% 100%,77.27% 100%,75.0% 100%,72.73% 100%,70.45% 100%,68.18% 100%,65.91% 100%,63.64% 100%,61.36% 100%,59.09% 100%,56.82% 100%,54.55% 100%,52.27% 100%,50.0% 100%,47.73% 100%,45.45% 100%,43.18% 100%,40.91% 100%,38.64% 100%,36.36% 100%,34.09% 100%,31.82% 100%,29.55% 100%,27.27% 100%,25.0% 100%,22.73% 100%,20.45% 100%,18.18% 100%,15.91% 100%,13.64% 100%,11.36% 100%,9.09% 100%,6.82% 100%,4.55% 100%,2.27% 100%,0.0% 100%);
+    transition:transform .4s cubic-bezier(.3,.9,.4,1), clip-path .4s cubic-bezier(.3,.9,.4,1), box-shadow .4s ease;
+  }
+  /* the seam between consecutive tickets — dashes with small punched
+     notches at either end, like a strip meant to come apart one at a time */
+  .pub-row:not(:first-child)::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:9px;
+    background-image:
+      radial-gradient(circle at 4.5px 4.5px, var(--paper) 4px, transparent 4.5px),
+      radial-gradient(circle at 4.5px 4.5px, var(--paper) 4px, transparent 4.5px),
+      repeating-linear-gradient(to right, var(--ink) 0 6px, transparent 6px 13px);
+    background-position:left top, right top, center;
+    background-repeat:no-repeat, no-repeat, no-repeat;
+    background-size:9px 9px, 9px 9px, 100% 1px;
+    opacity:.8;
+    transition:opacity .3s ease;
+  }
+  /* hovering a ticket actually tears it: the top edge cuts jagged instead of
+     straight, and it lifts free of the strip, tilting toward you — the cream
+     card now shows real torn silhouette against the stone folder behind it */
+  .pub-row:hover{
+    transform:translateY(-9px) rotate(-1.6deg);
+    box-shadow:5px 14px 22px -6px rgba(0,0,0,.4);
+    z-index:2;
+  }
+  .pub-row:hover::before{ opacity:0; }
+  .pub-row:hover{
+    clip-path:polygon(0.0% 2px,2.27% 7px,4.55% 2px,6.82% 7px,9.09% 2px,11.36% 7px,13.64% 2px,15.91% 7px,18.18% 2px,20.45% 7px,22.73% 2px,25.0% 7px,27.27% 2px,29.55% 7px,31.82% 2px,34.09% 7px,36.36% 2px,38.64% 7px,40.91% 2px,43.18% 7px,45.45% 2px,47.73% 7px,50.0% 2px,52.27% 7px,54.55% 2px,56.82% 7px,59.09% 2px,61.36% 7px,63.64% 2px,65.91% 7px,68.18% 2px,70.45% 7px,72.73% 2px,75.0% 7px,77.27% 2px,79.55% 7px,81.82% 2px,84.09% 7px,86.36% 2px,88.64% 7px,90.91% 2px,93.18% 7px,95.45% 2px,97.73% 7px,100.0% 2px,100.0% calc(100% - 2px),97.73% calc(100% - 7px),95.45% calc(100% - 2px),93.18% calc(100% - 7px),90.91% calc(100% - 2px),88.64% calc(100% - 7px),86.36% calc(100% - 2px),84.09% calc(100% - 7px),81.82% calc(100% - 2px),79.55% calc(100% - 7px),77.27% calc(100% - 2px),75.0% calc(100% - 7px),72.73% calc(100% - 2px),70.45% calc(100% - 7px),68.18% calc(100% - 2px),65.91% calc(100% - 7px),63.64% calc(100% - 2px),61.36% calc(100% - 7px),59.09% calc(100% - 2px),56.82% calc(100% - 7px),54.55% calc(100% - 2px),52.27% calc(100% - 7px),50.0% calc(100% - 2px),47.73% calc(100% - 7px),45.45% calc(100% - 2px),43.18% calc(100% - 7px),40.91% calc(100% - 2px),38.64% calc(100% - 7px),36.36% calc(100% - 2px),34.09% calc(100% - 7px),31.82% calc(100% - 2px),29.55% calc(100% - 7px),27.27% calc(100% - 2px),25.0% calc(100% - 7px),22.73% calc(100% - 2px),20.45% calc(100% - 7px),18.18% calc(100% - 2px),15.91% calc(100% - 7px),13.64% calc(100% - 2px),11.36% calc(100% - 7px),9.09% calc(100% - 2px),6.82% calc(100% - 7px),4.55% calc(100% - 2px),2.27% calc(100% - 7px),0.0% calc(100% - 2px));
+  }
+  @media (prefers-reduced-motion:reduce){
+    .pub-row{ transition:box-shadow .2s ease; }
+    .pub-row:hover{ transform:none; clip-path:none; box-shadow:0 4px 10px rgba(0,0,0,.2); }
+    .pub-row:hover::before{ opacity:.8; }
+  }
+  .pub-row summary{ cursor:pointer; list-style:none; }
+  .pub-row summary::-webkit-details-marker{ display:none; }
+  .pub-row summary::marker{ content:""; }
+  .pub-top{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+  .venue-pill{
+    font-family:var(--mono); font-size:11px; letter-spacing:.02em;
+    padding:4px 10px; border:1.5px solid var(--ink); background:var(--paper);
+    white-space:normal; overflow-wrap:anywhere;   /* long venue names wrap instead of overflowing */
+    max-width:calc(100% - 38px);                  /* leaves room for the + button on the same line */
+  }
+  .pub-toggle{
+    margin-left:auto; width:24px; height:24px; flex-shrink:0;
+    border:1.5px solid var(--ink); background:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:15px; line-height:1;
+    transition:transform .22s ease, border-color .18s ease, color .18s ease;
+  }
+  .pub-row[open] .pub-toggle{ transform:rotate(45deg); }
+  .pub-row summary:hover .pub-toggle{ border-color:var(--red); color:var(--red); }
+  .pub-row summary:hover .pub-title{ color:var(--red); }
+  .pub-title{ font-family:var(--serif); font-weight:600; font-size:17px; margin:6px 0 4px; transition:color .18s ease; overflow-wrap:break-word; }
+  .pub-meta{ font-family:var(--mono); font-size:12px; color:#4a4232; margin:0; overflow-wrap:break-word; }
+  sup{ line-height:0; }
+  .pub-note{ font-family:var(--mono); font-size:11px; color:#4a4232; margin:4px 0 0; }
+  .pub-expand{ padding:6px 0 4px 42px; animation:pubOpen .25s ease; }
+  @keyframes pubOpen{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion:reduce){ .pub-expand{ animation:none; } }
+  .pub-abstract{
+    font-size:14px; color:#3a3428; max-width:68ch; margin:6px 0 14px;
+    padding-left:14px; border-left:2px dashed var(--rule);
+  }
+  .pub-links{ font-family:var(--mono); font-size:11.5px; }
+  .pub-links a{ text-decoration:none; border-bottom:1.5px solid var(--ink); margin-right:16px; }
+  .pub-links a:hover{ color:var(--red); border-color:var(--red); }
 
-        .contact-method:hover {
-            box-shadow: 3px 3px 0px #000;
-            background-color: var(--pastel-mint);
-        }
+  /* ================= PROJECTS (section currently commented out in HTML) ================= */
+  .stamp-sheet{
+    padding:10px 0 56px; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:26px;
+  }
+  .stamp-card{
+    position:relative; background:var(--paper-light);
+    padding:26px 20px 26px; margin:10px;
+    transition:transform .25s ease, filter .25s ease;
+    --notch:7px;      /* radius of each perforation bite */
+    --period:22px;    /* spacing between notches along an edge */
 
-        .contact-method:active {
-            box-shadow: 1px 1px 0px #000;
-            transform: translate(1px, 1px);
-        }
+    /* Real transparency cut into the shape itself (not a painted circle),
+       so the notch is a true semicircle bite and nothing "reveals itself"
+       on hover — whatever sits behind genuinely shows through. */
+    -webkit-mask-image:
+      radial-gradient(circle var(--notch) at 50% 0,   transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 50% 100%,transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 0 50%,   transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 100% 50%,transparent calc(var(--notch) - .5px), black var(--notch));
+    -webkit-mask-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
+    -webkit-mask-size: var(--period) 100%, var(--period) 100%, 100% var(--period), 100% var(--period);
+    -webkit-mask-position: top, bottom, left, right;
+    -webkit-mask-composite: source-in, source-in, source-in;
+    mask-image:
+      radial-gradient(circle var(--notch) at 50% 0,   transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 50% 100%,transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 0 50%,   transparent calc(var(--notch) - .5px), black var(--notch)),
+      radial-gradient(circle var(--notch) at 100% 50%,transparent calc(var(--notch) - .5px), black var(--notch));
+    mask-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
+    mask-size: var(--period) 100%, var(--period) 100%, 100% var(--period), 100% var(--period);
+    mask-position: top, bottom, left, right;
+    mask-composite: intersect, intersect, intersect;
+  }
+  .stamp-card:hover{
+    transform:translateY(-5px) rotate(-0.6deg);
+    /* drop-shadow (unlike box-shadow) follows the masked silhouette, so the
+       lift never exposes a rectangular edge underneath the notches */
+    filter:drop-shadow(6px 9px 0 rgba(26,23,18,.9));
+  }
+  @media (prefers-reduced-motion:reduce){ .stamp-card:hover{ transform:none; } }
+  .denom{
+    position:absolute; top:14px; right:14px; font-family:var(--mono); font-size:11px;
+    border:1.5px solid var(--ink); padding:2px 6px; background:var(--saffron); transform:rotate(3deg);
+  }
+  .stamp-art{ height:70px; margin-bottom:14px;
+    background:radial-gradient(circle at 20% 40%, var(--red) 0 26px, transparent 27px),
+      linear-gradient(135deg, var(--indigo) 0 40%, var(--paper) 40%); }
+  .stamp-card:nth-child(2) .stamp-art{
+    background:radial-gradient(circle at 75% 60%, var(--saffron) 0 24px, transparent 25px),
+      repeating-linear-gradient(90deg, var(--magenta) 0 10px, var(--paper) 10px 20px); }
+  .stamp-card:nth-child(3) .stamp-art{
+    background:conic-gradient(var(--red) 0 25%, var(--paper) 0 50%, var(--teal) 0 75%, var(--paper) 0); }
+  .stamp-card:nth-child(4) .stamp-art{
+    background:repeating-radial-gradient(circle at center, var(--indigo) 0 6px, var(--paper) 6px 12px); }
+  .stamp-card h3{ font-family:var(--display); font-size:16px; margin:0 0 8px; letter-spacing:-.01em; }
+  .stamp-card p{ font-size:13.5px; margin:0 0 12px; }
+  .stamp-card .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+  .stamp-card .field-tag{ font-size:10px; padding:3px 7px; }
+  .stamp-link{ font-family:var(--mono); font-size:11.5px; text-decoration:none; border-bottom:1.5px solid var(--ink); }
+  .stamp-link:hover{ color:var(--red); border-color:var(--red); }
 
-        .contact-method svg {
-            width: 24px;
-            height: 24px;
-            color: #000;
-        }
-        /* Border Block with Shadow */
-        .border-block {
-            border: 1px solid #000;
-            box-sizing: border-box;
-            box-shadow: 2px 2px 0px #000;
-            border-radius: 3px;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 30px;
-        }
-        .border-block.no-hover:hover {
-            box-shadow: 2px 2px 0px #000;
-        }
-        .border-block:hover {
-            box-shadow: 3px 3px 0px #000000;
-            text-decoration: none;
-        }
-        .inner-border-block_type-1 {
-            padding: 30px;
-        }
-        .inner-border-block_type-2 {
-            padding: 20px;
-        }
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .projects-grid {
-                flex-direction: column;
-            }
-            
-            .projects-sidebar {
-                position: static;
-                width: 100%;
-            }
-        }
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 0;
-            }
-            .header-cell {
-                display: none;
-            }
-            .header-cell.logo-cell {
-                display: flex;
-                border-bottom: 1px solid #000;
-                padding: 15px 20px;
-                justify-content: space-between;
-                width: 100%;
-            }
-            .burger-menu {
-                display: flex;
-            }
-            .mobile-nav {
-                display: none;
-            }
-            .mobile-nav.active {
-                display: flex;
-            }
-            .mobile-nav .header-cell-content {
-                color: #000;
-            }
-            .mobile-nav .header-cell-content:hover {
-                color: #000;
-                background-color: rgba(0, 0, 0, 0.1);
-            }
-            .split-screen {
-                flex-direction: column;
-            }
-            .left-section {
-                order: 2; /* Show left section second on mobile */
-                border-right: none;
-                border-top: 1px solid #000;
-            }
-            .right-section {
-                order: 1; /* Show right section first on mobile */
-            }
-            .education-grid {
-                gap: 60px;
-            }
-            .education-item {
-                width: 250px;
-            }
-            .contact-methods {
-                justify-content: center;
-            }
-        }
-    </style>
+  /* ================= MISC — sticky notes ================= */
+  .corkboard{
+    padding:18px 0 60px; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:26px;
+  }
+  .scrap{
+    --r:-3deg;
+    display:block; text-decoration:none; color:var(--ink);
+    background:var(--sticky, var(--paper-light));
+    border:1.5px solid var(--ink);
+    padding:22px 16px 16px;
+    position:relative;
+    font-size:13.5px;
+    transform:rotate(var(--r));
+    box-shadow:3px 5px 0 rgba(0,0,0,.22);
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .scrap:hover{
+    transform:rotate(var(--r)) translateY(-4px);
+    box-shadow:5px 9px 0 rgba(0,0,0,.28);
+  }
+  @media (prefers-reduced-motion:reduce){ .scrap:hover{ transform:rotate(var(--r)); } }
+  .tape{
+    position:absolute; top:-9px; left:50%; transform:translateX(-50%) rotate(-3deg);
+    width:60px; height:20px; background:rgba(255,255,255,0.45);
+    border:1px solid rgba(26,23,18,0.3);
+  }
+  .scrap h4{ font-family:var(--display); font-size:13px; margin:6px 0 8px; letter-spacing:.01em; }
+  .scrap .eyebrow{ display:block; margin-bottom:4px; color:var(--ink); opacity:.65; }
+  .scrap .go{ display:block; margin-top:10px; font-family:var(--mono); font-size:10.5px; text-decoration:underline; }
+
+  /* ================= FOOTER ================= */
+  footer{ padding:36px 0 44px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; }
+  footer .eyebrow{ display:block; margin-bottom:6px; }
+  footer .fmono{ font-family:var(--mono); font-size:12px; }
+  .to-lines{ font-family:var(--mono); font-size:12px; line-height:1.9; overflow-wrap:anywhere; }
+  .to-lines .ul{ border-bottom:1.5px solid var(--ink); padding-bottom:1px; }
+
+  /* =====================================================================
+     RESPONSIVE
+     (kept at the end so these rules win over the desktop ones above)
+     ===================================================================== */
+
+  /* ---- tablets and down ---- */
+  @media (max-width:820px){
+    .intro-grid{ grid-template-columns:1fr; gap:36px; padding:40px 0 40px; }
+  }
+
+  /* ---- phones ---- */
+  @media (max-width:640px){
+    .folder-wrap{ padding:10px 10px 36px; }
+
+    /* header: tabs scroll sideways */
+    header.site{ padding-top:4px; }
+    .navbar{ gap:10px; padding:0 2px; }
+    nav.tabs{ gap:5px; padding-right:12px; -webkit-overflow-scrolling:touch; }
+    nav.tabs a{ font-size:10.5px; letter-spacing:.05em; padding:9px 14px 11px; flex-shrink:0; }
+    section[id]{ scroll-margin-top:64px; }
+
+    /* folder: smaller offset shadow so nothing pushes past the screen edge */
+    .folder-body{ border-width:2.5px; box-shadow:6px 6px 0 var(--ink); }
+
+    .wrap{ padding:0 16px; }
+    .eyebrow{ font-size:11px; letter-spacing:.1em; }
+    .sec-head{ padding:32px 0 14px; }
+
+    /* about */
+    .intro-grid{ padding:30px 0 34px; gap:30px; }
+    .bio-row{ flex-direction:column; align-items:center; gap:22px; margin-top:8px; }
+    h1.name{ text-align:center; }
+    .photo-col{ width:176px; }
+    .id-photo{ width:176px; height:176px; }
+    .pron{ font-size:10.5px; margin-top:18px; }
+    .bio{ width:100%; }
+    .bio p{ font-size:15px; max-width:none; }
+    .dropcap{ font-size:54px; padding:5px 8px 0 3px; margin:2px 10px 0 0; box-shadow:4px 4px 0 var(--saffron); }
+    .field-tags{ gap:6px; }
+    .field-tag{ font-size:10.5px; padding:5px 9px; }
+    .contact-pill{ font-size:12px; padding:8px 12px; width:100%; }
+    .contact-pill b{ flex-shrink:0; }
+    .sidebar-card{ font-size:12px; }
+
+    /* updates: smaller badge, tighter columns */
+    .updates-list{ padding-bottom:36px; }
+    .update-row{ grid-template-columns:62px 1fr; gap:14px; align-items:start; padding:14px 0; }
+    .date-badge{ width:58px; height:58px; box-shadow:3px 4px 0 rgba(0,0,0,.2); }
+    .date-badge b{ font-size:12.5px; }
+    .date-badge small{ font-size:8.5px; }
+    .update-row > div:last-child{ font-size:14.5px; line-height:1.5; }
+
+    /* publications: let venue wrap, drop the deep indent on expanded text */
+    .pub-list{ padding-bottom:28px; }
+    .pub-row{ padding:22px 14px 18px; }
+    .pub-top{ gap:10px; }
+    .venue-pill{ white-space:normal; font-size:10.5px; flex:1 1 0; min-width:0; max-width:none; }
+    .pub-title{ font-size:15.5px; line-height:1.4; }
+    .pub-meta{ font-size:11.5px; }
+    .pub-expand{ padding:6px 0 2px 0; }
+    .pub-abstract{ font-size:13.5px; padding-left:12px; }
+    .pub-links a{ display:inline-block; margin-bottom:4px; }
+
+    /* projects + misc */
+    .stamp-sheet{ gap:16px; padding-bottom:40px; }
+    .stamp-card{ margin:6px; }
+    .corkboard{ gap:22px; padding:14px 6px 40px; }
+
+    /* footer */
+    footer{ flex-direction:column; align-items:flex-start; padding:28px 0 32px; }
+    footer .fmono{ font-size:11px; }
+  }
+
+  /* ---- very small phones ---- */
+  @media (max-width:360px){
+    .wrap{ padding:0 12px; }
+    .photo-col, .id-photo{ width:160px; }
+    .id-photo{ height:160px; }
+    .update-row{ grid-template-columns:52px 1fr; gap:12px; }
+    .date-badge{ width:50px; height:50px; }
+    .date-badge b{ font-size:11px; }
+  }
+
+  /* ---- touch screens: no hover, so don't leave cards stuck "lifted" after a tap ---- */
+  @media (hover:none){
+    .pub-row:hover{ transform:none; clip-path:none; box-shadow:none; z-index:auto; }
+    .pub-row:hover::before{ opacity:.8; }
+    .pub-row summary:hover .pub-title{ color:inherit; }
+    .pub-row summary:hover .pub-toggle{ border-color:var(--ink); color:inherit; }
+    .scrap:hover{ transform:rotate(var(--r)); box-shadow:3px 5px 0 rgba(0,0,0,.22); }
+    .stamp-card:hover{ transform:none; filter:none; }
+    nav.tabs a:hover{ transform:translateY(5px); }
+  }
+
+</style>
 </head>
 <body>
-    <!-- Header - Full Screen Width with Navigation -->
-    <header class="header">
-        <div class="header-cell logo-cell">
-            <a href="#" class="header-cell-content">
-                <span class="name-slot">
-                    <span class="name-slot-track">
-                        <span>Shagun Dwivedi</span>
-                        <span>शगुन द्विवेदी</span>
-                        <span>𑌶𑌗𑍁𑌨 𑌦𑍍𑌵𑌿𑌵𑍇𑌦𑌿</span>
-                        <span>Шагун Двиведи</span>
-                        <span>Shagun Dwivedi</span>
-                    </span>
-                </span>
-            </a>
-            <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="header-cell">
-            <a href="#about" class="header-cell-content">ABOUT ME</a>
-        </div>
-        <div class="header-cell">
-            <a href="#education" class="header-cell-content">EDUCATION</a>
-        </div>
-        <div class="header-cell">
-            <a href="#projects" class="header-cell-content">PROJECTS</a>
-        </div>
-        <div class="header-cell">
-            <a href="#publications" class="header-cell-content">PUBLICATIONS</a>
-        </div>
-        <div class="header-cell">
-            <a href="#contact" class="header-cell-content">CONTACT</a>
-        </div>
-        <div class="header-cell resume-cell">
-            <a href="https://drive.google.com/file/d/1aGkk9_WSnrxf6Se3-_C24HQTdfSGhEXZ/view" class="header-cell-content">CV</a>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#about" class="header-cell-content">ABOUT ME</a>
-            <a href="#education" class="header-cell-content">EDUCATION</a>
-            <a href="#projects" class="header-cell-content">PROJECTS</a>
-            <a href="#publications" class="header-cell-content">PUBLICATIONS</a>
-            <a href="#contact" class="header-cell-content">CONTACT</a>
-            <a href="https://drive.google.com/file/d/1aGkk9_WSnrxf6Se3-_C24HQTdfSGhEXZ/view" class="header-cell-content resume-btn">CV</a>
-        </div>
-    </header>
-    <!-- Main Content Container -->
-    <div class="main-container">
-        <!-- Split Screen Layout -->
-        <div class="split-screen">
-            <!-- Left Section - White -->
-            <div class="left-section">
-                <!-- Updates Section -->
-                <h2 class="updates-header">Updates</h2>
 
-                <div class="update-item">
-                    <div class="update-date">Jul 2026</div>
-                    <div class="update-title">Paper Published in ACL 2026</div>
-                    <div class="update-content">Our paper "Comparative Analysis of the Intrinsic Metrics for Tokenizers and their effect on Downstream Tasks for Hindi and Marathi" has been published in ACL Main 2026.
-                        <a href="https://aclanthology.org/2026.acl-long.1037/" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+<div class="folder-wrap">
 
-                <div class="update-item">
-                    <div class="update-date">Jun 2026</div>
-                    <div class="update-title">Paper Accepted to DALL (ICDAR 2026 Workshop)</div>
-                    <div class="update-content">
-                        Our paper "Synthetic Line Image Generation from Cropped Grapheme Images for Handwritten Marathi Text Recognition" has been accepted to ICDAR 2026 Workshop on Documents Analysis of Low-resource Languages.
-                        <!-- Synthetic training data generation pipeline which uses real characters from handwritten Marathi manuscripts -->
-                        <!-- <a href="https://youtu.be/HRZvvre4iKE" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a> -->
-                    </div>
-                </div>
-
-                <div class="update-item">
-                    <div class="update-date">Jan 2026</div>
-                    <div class="update-title">HTR of Grantha Manuscripts</div>
-                    <div class="update-content">I'm exploring different OCR methods like Vision Transformers, CRNNs, and other techniques to improve accuracy. Compiling some insights about the variations in the script here.
-                        <a href="https://shagundwivedi.github.io/grantha_manuscript_characters/" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- <div class="update-item">
-                    <div class="update-date">Sep 2025</div>
-                    <div class="update-title">Built the Legislative Analysis Application</div>
-                    <div class="update-content">A legislative document research tool which provides real-time document analysis with visual relationship mapping, using MCP architecture and vector databases. Check out the demo
-                        <a href="https://youtu.be/HRZvvre4iKE" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div> -->
-                <!-- </div> -->
-                
-                <!-- <div class="update-item">
-                    <div class="update-date">Aug 2025</div>
-                    <div class="update-title">Check out Entia</div>
-                    <div class="update-content">Your go-to Express Add-on for personalized video analytics and persona-based feedback. We won the Best New Video Innovation category in Adobe Express Add-ons Hackathon!
-                        <a href="https://entia.vercel.app/" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="update-item">
-                    <div class="update-date">Jun 2025</div>
-                    <div class="update-title">Recently Published</div>
-                    <div class="update-content">A Case Study of Handwritten Text Recognition from Pre-Colonial era Sanskrit Manuscripts
-                        <a href="https://aclanthology.org/2025.wsc-csdh.4/" class="update-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div> -->
-                
-                <!-- Links Section
-                <h2 class="links-header">Links</h2>
-                <ul class="links-list">
-                    <li><a href="#">GitHub Profile</a></li>
-                    <li><a href="#">LinkedIn Profile</a></li>
-                    <li><a href="#">Research Papers</a></li>
-                    <li><a href="#">Blog Posts</a></li>
-                    <li><a href="#">Certifications</a></li>
-                </ul> -->
-            </div>
-            
-            <!-- Right Section - Reddish -->
-            <div class="right-section">
-                <!-- Intro Section -->
-                <h1 class="intro-header">Hello! I'm Shagun Dwivedi</h1>
-                
-                <div class="intro-content">
-                    <p>I'm an AI Researcher, with a passion for data, writing systems, languages, and accuracy.
-                        I currently work at the Centre for Interdisciplinary AI, FLAME University, Pune, India.
-                        I have a BS in Data Science and Applications from IIT Madras. I have a BA (Hons) in Ancient Indian History and Archaeology from University of Lucknow. 
-                    </p>
-                        
-                    <p>I'm interested in natural language processing, use of language models in machine perception, and evaluation benchmarks/metrics for LLMs.</p>
-
-                    <!-- <p> 
-                        In my free time, I like to <a href="https://www.goodreads.com/review/list/186451910?shelf=%23ALL%23">read books</a>, <a href="">watch movies</a>
-                    </p> -->
-                    
-                    <!-- <p>Perpetually working on improving my chops, one problem at a time.
-                    <br>
-                    And the probelm at hand is whether it's better for a language model to read 'Persevere' as 'per+se+vere' or as 'per(“through, by the means of”)+severus(“strict, earnest”)'</p> -->
-                </div>
-                
-                <!-- <div class="intro-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-title">Data Science Expertise</div>
-                        <div class="highlight-content">Specialized in statistical analysis, machine learning algorithms, and data visualization techniques to extract meaningful insights from complex datasets.</div>
-                    </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-title">Technical Skills</div>
-                        <div class="highlight-content">Proficient in Python, Scikit-Learn, Flask, RESTful APIs, and database management with a strong foundation in software development principles.</div>
-                    </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-title">Research & Analysis</div>
-                        <div class="highlight-content">Experience in conducting market research, formulating growth strategies, and performing in-depth analysis for business decision-making.</div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-        <!-- Education Section - Separate Section -->
-        <section id="education" class="education-section">
-            <div class="education-container">
-                <h2 class="education-header">Education</h2>
-                
-                <!-- Navigation buttons -->
-                <div class="education-nav-buttons">
-                    <button class="education-nav-btn left-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-                    <button class="education-nav-btn right-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-                
-                <div class="education-scrollable">
-                    <div class="education-grid">
-                        <div class="education-item">
-                            <div class="horizontal-line left"></div>
-                            <div class="horizontal-line right"></div>
-                            <div class="education-year">2025</div>
-                            <div class="education-degree">BS in Data Science and Applications, IIT Madras</div>
-                            <div class="education-school">CGPA : 9.04</div>
-                        </div>
-                        
-                        <div class="education-item">
-                            <div class="horizontal-line left"></div>
-                            <div class="horizontal-line right"></div>
-                            <div class="education-year">2023</div>
-                            <div class="education-degree">BA (Hons.) in Ancient Indian History and Archaeology, University of Lucknow</div>
-                            <div class="education-school">CGPA: 8.02</div>
-                        </div>
-                        
-                        <div class="education-item">
-                            <div class="horizontal-line left"></div>
-                            <div class="horizontal-line right"></div>
-                            <div class="education-year">2020</div>
-                            <div class="education-degree">Class XII (PCM with CS) Jagran Public School, Lucknow</div>
-                            <div class="education-school">Percentage: 94%</div>
-                        </div>
-                        
-                        <div class="education-item">
-                            <div class="horizontal-line left"></div>
-                            <div class="horizontal-line right"></div>
-                            <div class="education-year">2018</div>
-                            <div class="education-degree">Class X, Jagran Public School, Lucknow</div>
-                            <div class="education-school">Percentage: 91.4%</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Timeline line -->
-                    <div class="education-timeline"></div>
-                </div>
-            </div>
-        </section>
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="projects-container">
-                <h1 class="projects-header">Check out some of my projects</h1>
-                
-                <div class="projects-grid">
-                    <!-- Left Sidebar - Stays Fixed -->
-                    <div class="projects-sidebar">
-                        <div class="domains border-block inner-border-block_type-2">
-                            <p>I have primarily worked on:</p>
-                            <div class="domain-list">
-                                <span class="domain-item">Natural Language Processing</span>
-                                <span class="domain-item">Optical Character Recognition</span>
-                                <span class="domain-item">Web Development</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Content - Scrollable -->
-                    <div class="projects-content">
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Analysis of different Tokenizers and their effect on Downstream tasks for Hindi and Marathi</h2>
-                            <p class="project-description">Evaluation of various subword tokenization methods and their impact on language modeling performance for Hindi and Marathi.</p>
-                            <div class="tags">
-                                <span class="tag">HuggingFace Transformers</span>
-                                <span class="tag">LLM Evaluation</span>
-                                <span class="tag">Question Answering</span>
-                                <span class="tag">Grapheme to Phoneme</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Proposing a method of tokenization, which could help reduce the issue of sub-optimal tokenization with over-segmentation of text in Indic languages and its effect on a language modeling (using T5).</p>
-                            <a href="#" class="project-link">MANUSCRIPT IN REVIEW
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg> -->
-                            </a>
-                        </div>
-
-                        <!-- <div class="projects-content">
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Downscaling Terrestrial Water Storage Anomalies</h2>
-                            <p class="project-description">Algorithm that produces a higher spatial resolution TWSA using 6 months of precipitation and temperature.</p>
-                            <div class="tags">
-                                <span class="tag">Remote Sensing</span>
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Statistics</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Implemented a neighborhood-weighted iterative optimization algorithm to downscale TWSA from 3°×3° to 0.1°×0.1° resolution achieving better RMSE and spatial frequency scores than GLDAS estimates.</p>
-                            <a href="#" class="project-link">MANUSCRIPT IN PREPARATION
-                            </a>
-                        </div> -->
-                        
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Converting Custom-Embedded Subsetted Non-Unicode Fonts to Searchable Formats</h2>
-                            <p class="project-description">Extracting Indic text from non-Unicode standard PDFs with embedded fonts to a searchable and Unicode-compliant format.</p>
-                            <div class="tags">
-                                <span class="tag">Computational Linguistics</span>
-                                <span class="tag">Optical Character Recognition</span>
-                                <span class="tag">Low Resource Scripts</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Expanding on previously published case study in Gujarati by including Hindi, Marathi, and Bangla documents.</p>
-                            <!-- <a href="https://github.com/ShagunDwivedi/MarketingStrategy-PersonalisedOffer" class="project-link">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a> -->
-                        </div>
-
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Handwritten Text Recognition for Pre-Colonial Sanskrit manuscripts</h2>
-                            <p class="project-description">Digitizing manuscripts on Vedanta and Mimansa to make them searchable.</p>
-                            <div class="tags">
-                                <span class="tag">Optical Character Recognition</span>
-                                <span class="tag">Finetuning</span>
-                                <span class="tag">Evaluation Metrics</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Finetuned a Resnet-BiLSTM-CTC model for handwritten manuscripts which outperforms out-of-the-box HTR models on grapheme cluster error rate and character error rate.</p>
-                            <a href="https://kartikchincholikar.github.io/sanskrit-ocr/" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">AI Language Practice Applications for French and German</h2>
-                            <p class="project-description">Platform for beginner French 101 and German 101 courses' practice customised to university course syllabi.</p>
-                            <div class="tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Scikit-Learn</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Designed multi-agent system supported by various custom prompt-engineered OpenAI bots for the dialog framework. Presented at AIET 2025.</p>
-                            <a href="https://flame-cai.github.io/french_AI_bot/" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Customer Behavior Prediction</h2>
-                            <p class="project-description">Predicting user behaviour based on the restaurant's offers.</p>
-                            <div class="tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Scikit-Learn</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Performed preprocessing, trained and validated and evaluated multiple supervised classification models and decided on the best prediction model.</p>
-                            <a href="https://github.com/ShagunDwivedi/MarketingStrategy-PersonalisedOffer" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">Indian Weather API</h2>
-                            <p class="project-description">API for India Meteorological Department Weather Data</p>
-                            <div class="tags">
-                                <span class="tag">RESTful API</span>
-                                <span class="tag">Web Scraping</span>
-                                <span class="tag">Flask-Restful</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">Access brief or detailed weather report based on station's name. Get forecast for the next seven days.</p>
-                            <a href="https://github.com/ShagunDwivedi/IndianWeatherAPI" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">AirIndia Case Study</h2>
-                            <p class="project-description">Analysis and formulation of growth strategies for AirIndia post acquisition by TATA Group</p>
-                            <div class="tags">
-                                <span class="tag">Market Research</span>
-                                <span class="tag">Analysis</span>
-                                <span class="tag">Strategy Development</span>
-                            </div>
-                            <p class="project-details">Case study ranked first under Winter Consulting'22, IIT Guwahati. Conducted extensive market research, formulated strategies for airline's improvement based on the growth strategy framework.</p>
-                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ2v1QQOez6Ou2cgIuwgNZQUhvYtSSqdXP6owazbbRYJGf4EecOV0sHbei-Ok5bFNJZ1wQETaUfJW5a/pub?start=false&loop=false&delayms=3000&slide=id.g123f572be1b_0_0" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="project border-block inner-border-block_type-1">
-                            <h2 class="project-title">TrackOn App</h2>
-                            <p class="project-description">Flask based web application for tracking habits, activities, and other life parameters.</p>
-                            <div class="tags">
-                                <span class="tag">Flask</span>
-                                <span class="tag">SQLite</span>
-                                <span class="tag">VueJs</span>
-                                <span class="tag">Redis</span>
-                                <span class="tag">Celery</span>
-                                <span class="tag more">+ MORE</span>
-                            </div>
-                            <p class="project-details">TrackOn is a web application used for tracking habits, activities, other life parameters. Users can register &amp; login to create multiple trackers with multiple logs. They can review their progress over time with graphs trend lines.</p>
-                            <a href="https://github.com/ShagunDwivedi/TrackOnToo" class="project-link" target="_blank">GO TO PROJECT
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="publications-section">
-            <div class="publications-container">
-                <h2 class="publications-header">Publications</h2>
-                
-                <div class="publication-card border-block inner-border-block_type-1">
-                    <h3 class="publication-title">A Case Study of Handwritten Text Recognition from Pre-Colonial era Sanskrit Manuscripts</h3>
-                    <div class="publication-authors">Kartik Chincholikar, Shagun Dwivedi, Kaushik Gopalan, Tarinee Awasthi</div>
-                    <div class="publication-venue">World Sanskrit Conference, 2025</div>
-                    <div class="publication-abstract">
-                        This paper presents a comprehensive study on applying handwritten text recognition techniques to pre-colonial era Sanskrit manuscripts. We discuss the challenges unique to these historical documents and our approach to achieving high accuracy in recognition.
-                    </div>
-                    <div class="publication-links">
-                        <a href="https://aclanthology.org/2025.wsc-csdh.4/" target="_blank" class="publication-link">
-                            PDF
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </a>
-                        <!-- <a href="#" class="publication-link">
-                            DOI
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a> -->
-                        <!-- <a href="#" class="publication-link">
-                            Citation
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </a> -->
-                    </div>
-                </div>
-
-                <div class="publication-card border-block inner-border-block_type-1">
-                    <h3 class="publication-title">A Semi-Automatic Text Recognition Tool for Pre-Colonial Handwritten Manuscripts in Devanāgari Script</h3>
-                    <div class="publication-authors">Bharath Valaboju, Shagun Dwivedi, Kartik Chincholikar, Kaushik Gopalan, Vinod Vidwans</div>
-                    <div class="publication-venue">International Conference on Human-Computer Interaction, 2025</div>
-                    <div class="publication-abstract">
-                        This poster presents an annotation tool which allows the user to extract text from undigitized manuscripts using OCR, following which users can make corrections to the OCR-detected text. 
-                    </div>
-                    <div class="publication-links">
-                        <!-- <a href="#" class="publication-link">
-                            PDF
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </a> -->
-                        <a href="https://doi.org/10.1007/978-3-031-94171-9_13" class="publication-link">
-                            DOI
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                        <!-- <a href="#" class="publication-link">
-                            Citation
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </a> -->
-                    </div>
-                </div>
-
-                <div class="publication-card border-block inner-border-block_type-1">
-                    <h3 class="publication-title">Converting Gujarati Text in Custom-Embedded Subsetted Non-unicode Fonts to Searchable Formats: A Case Study Using Jain Religious Texts</h3>
-                    <div class="publication-authors">Rishav Jain, Shagun Dwivedi, Kaushik Gopalan</div>
-                    <div class="publication-venue">International Conference on Computer Vision and Image Processing, 2024</div>
-                    <div class="publication-abstract">
-                        This study presents a novel approach for extracting Gujarati text from non-Unicode standard PDFs with embedded fonts, addressing the challenges posed by these legacy fonts and providing a pathway to convert and preserve such documents in a searchable, Unicode-compliant format.  
-                    </div>
-                    <div class="publication-links">
-                        <!-- <a href="#" class="publication-link">
-                            PDF
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </a> -->
-                        <a href="https://doi.org/10.1007/978-3-031-93694-4_26" class="publication-link">
-                            DOI
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                        <!-- <a href="#" class="publication-link">
-                            Citation
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </a> -->
-                    </div>
-                </div>
-                
-                <!-- Add more publication cards here -->
-                
-            </div>
-        </section>
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="contact-container">
-                <h2 class="contact-header">Contact Me:</h2>
-                    <div class="contact-methods">
-                        <a href="mailto:shagunpdwivedi@gmail.com" class="contact-method">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shagundwivedi/" class="contact-method">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/ShagunDwivedi" class="contact-method">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </a>
-                        <!-- <a href="" class="contact-method"></a> -->
-                    </div>
-            </div>
-        </section>
+  <header class="site">
+    <div class="navbar">
+      <nav class="tabs">
+        <a href="#about">About</a>
+        <a href="#updates">Updates</a>
+        <a href="#publications">Publications</a>
+        <!-- <a href="#projects">Projects</a> -->
+        <a href="#misc">Misc</a>
+      </nav>
     </div>
-    <script>
-        // Burger menu functionality
-        const burgerMenu = document.getElementById('burgerMenu');
-        const mobileNav = document.getElementById('mobileNav');
-        burgerMenu.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
-        });
-        // Close menu when clicking on a link
-        const navLinks = mobileNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('active');
-            });
-        });
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInside = mobileNav.contains(event.target) || burgerMenu.contains(event.target);
-            if (!isClickInside && mobileNav.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-            }
-        });
+  </header>
 
-        // Slot machine name scroller
-        const track = document.querySelector('.name-slot-track');
-        const names = track.querySelectorAll('span');
-        const count = names.length;
-        let current = 0;
- 
-        setInterval(() => {
-            current++;
-            if (current < count) {
-                track.style.transition = 'transform 0.55s cubic-bezier(0.25, 0.85, 0.45, 1)';
-                track.style.transform = 'translateY(-' + (current * 1.8) + 'em)';
-            } else {
-                track.style.transition = 'none';
-                track.style.transform = 'translateY(0)';
-                current = 0;
-            }
-        }, 2200);
-        
-        // Education navigation buttons functionality
-        const educationScrollable = document.querySelector('.education-scrollable');
-        const leftBtn = document.querySelector('.education-nav-btn.left-btn');
-        const rightBtn = document.querySelector('.education-nav-btn.right-btn');
-        
-        leftBtn.addEventListener('click', function() {
-            educationScrollable.scrollBy({
-                left: -380, // Adjust based on card width + gap
-                behavior: 'smooth'
-            });
-        });
-        
-        rightBtn.addEventListener('click', function() {
-            educationScrollable.scrollBy({
-                left: 380, // Adjust based on card width + gap
-                behavior: 'smooth'
-            });
-        });
-    </script>
+  <div class="folder-body" id="top">
+  <main>
+
+    <!-- ================= ABOUT (merged landing) ================= -->
+    <section id="about">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div>
+            <!-- <span class="eyebrow">AI Research · Low-Resource Language Technology</span> -->
+            <!-- <p class="tagline">I build systems that read the scripts the internet still can't.</p> -->
+
+            <h1 class="name"><span>SHAGUN DWIVEDI</span></h1>
+
+            <div class="bio-row">
+              <div class="photo-col">
+                <div class="id-photo">
+                  <img src="assets/op71.jpeg" alt="Shagun Dwivedi">
+                  <span class="id-caption">S. DWIVEDI</span>
+                </div>
+                <div class="pron">↳ /ʃəˈɡʊn diˈveːdi/</div>
+              </div>
+
+              <div class="bio">
+                <p><span class="dropcap">I</span> am an AI researcher working on NLP and language modelling for morphologically complex and low-resource languages using computational linguistics. I aim to build systems that work equitably across languages.</p>
+                <p>At the Centre for Interdisciplinary AI, where I am advised by <a href="https://www.flame.edu.in/faculty/kaushik-gopalan" target="_blank" rel="noopener">Dr. Kaushik Gopalan</a>, my research focuses on how script-specific and morphological properties of tokenizers can affect model design and performance for Indic languages. Parallel to this, I have worked on linguistically informed, data-efficient methods for handwritten text recognition for historical (manu)scripts.
+                </p>
+                <p>In my free time, I enjoy <a href="https://app.thestorygraph.com/profile/shagundwivedi" target="_blank" rel="noopener">reading</a>, painting, and listening to podcasts. I have also been getting into puzzles and clay art lately.</p>
+              </div>
+            </div>
+
+            <div class="field-tags">
+              <span class="field-tag">Low-resource Languages</span>
+              <span class="field-tag">Tokenization</span>
+              <span class="field-tag">Multilingual NLP</span>
+              <span class="field-tag">Handwritten text recognition</span>
+              <!-- <span class="field-tag">Sanskrit &amp; Grantha scripts</span> -->
+              <span class="field-tag">Computational Linguistics</span>
+            </div>
+          </div>
+
+          <aside>
+            <div class="contact-list">
+              <a class="contact-pill" href="mailto:shagunpdwivedi@gmail.com"><b>MAIL</b> shagunpdwivedi@gmail.com</a>
+              <a class="contact-pill" href="https://scholar.google.com/citations?user=FlXyJx4AAAAJ&hl=en" target="_blank" rel="noopener"><b>SCHOLAR</b> Shagun Dwivedi</a>
+              <a class="contact-pill" href="https://github.com/ShagunDwivedi" target="_blank" rel="noopener"><b>GITHUB</b> ShagunDwivedi</a>
+              <a class="contact-pill" href="https://www.linkedin.com/in/shagundwivedi/" target="_blank" rel="noopener"><b>LINKEDIN</b> shagundwivedi</a>
+              <a class="contact-pill" href="https://drive.google.com/file/d/1aGkk9_WSnrxf6Se3-_C24HQTdfSGhEXZ/view" target="_blank" rel="noopener"><b>CV</b> curriculum vitae</a>
+            </div>
+
+            <div class="sidebar-card">
+              <h4>CURRENTLY</h4>
+              <p><b>Applying for Fall'27 PhD Programs!</b></p>
+              <p>AI Engineer, Centre for Interdisciplinary AI, FLAME University (2024-now)</p>
+              <h4>PREVIOUSLY</h4>
+              <p>BS, Data Science &amp; Applications, IIT Madras (2021-2025)<br>
+                BA (Hons), Ancient Indian History &amp; Archaeology, University of Lucknow (2020-2023)</p>
+              <!-- <h4>SCRIPTS I WORK WITH</h4>
+              <p>Devanāgari · Grantha · Gujarati · Bangla · Latin</p> -->
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPDATES ================= -->
+    <section id="updates">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Dispatches</span>
+          <h2 class="section-title">Updates</h2>
+        </div>
+
+        <div class="updates-list reveal">
+          <div class="update-row">
+            <div class="date-badge"><b>AUG</b><small>2026</small></div>
+            <div><span class="update-tag">paper</span><i>"Performance of Grapheme-Based Tokenizers on Word-level and Natural Language Understanding tasks for Indic Languages"</i> was accepted to <b>EMNLP 2026 (Findings)</b>.</div>
+          </div>
+          <div class="update-row">
+            <div class="date-badge"><b>AUG</b><small>2026</small></div>
+            <div><span class="update-tag">paper</span><i>"Synthetic Data Generation using Grapheme-level Visual Units for Handwritten Text Recognition of Grantha Manuscripts"</i> was accepted to <b>Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026</b>.</div>
+          </div>
+          <div class="update-row">
+            <div class="date-badge"><b>JUL</b><small>2026</small></div>
+            <div><span class="update-tag">paper</span><i>"Comparative Analysis of the Intrinsic Metrics for Tokenizers and their effect on Downstream Tasks for Hindi and Marathi"</i> has been published in <b>ACL Main 2026</b>.</div>
+          </div>
+          <div class="update-row">
+            <div class="date-badge"><b>JUN</b><small>2026</small></div>
+            <div><span class="update-tag">PAPER</span>Our paper <i>"Synthetic Line Image Generation from Cropped Grapheme Images for Handwritten Marathi Text Recognition"</i> has been accepted to <b>ICDAR 2026 Workshop on Document Analysis of Low-resource Languages</b>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section id="publications">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">The archive</span>
+          <h2 class="section-title">Publications</h2>
+        </div>
+
+        <div class="pub-list reveal">
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">ACL 2026 — Main Conference</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">Comparative Analysis of the Intrinsic Metrics for Tokenizers and their effect on Downstream Tasks for Hindi and Marathi</p>
+              <p class="pub-meta"><b>Dwivedi, S.</b> & Gopalan, K.</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Various studies have pointed out that the performance of language models is poor in non-English or non-European languages. One of the factors affecting this performance is the effectiveness and suitability of the tokenization scheme used in the model. Indic scripts require multiple Unicode codepoints to represent a single visual unit to be encoded in the standard UTF-8 scheme. This paper investigates the effect of multiple tokenizers that use UTF-8 text input on the downstream performance of pretrained language models for Hindi and Marathi, languages written in Devanāgari script. We present the intrinsic performance of the tokenizers using Fertility, Rényi Efficiency and Percentile Frequency, and report the extrinsic performance of monolingual and multilingual models on question-answering tasks, using an automated parts-of-speech and sentence similarity based evaluation framework, and on word-level tasks such as grapheme-to-phoneme conversion and transliteration. We propose a grapheme cluster tokenizer for the script which shows performance better than or competitive with other popular tokenizers. We also find that the Rényi Efficiency metric is highly correlated to downstream performance on question answering.</p>
+              <div class="pub-links"><a href="https://aclanthology.org/2026.acl-long.1037/" target="_blank" rel="noopener">paper</a></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">EMNLP 2026 - Findings</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">Performance of Grapheme-Based Tokenizers on Word-level and Natural Language Understanding tasks for Indic Languages</p>
+              <p class="pub-meta"><b>Dwivedi, S.</b>, Saquib, M., Gopalan, K.</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Tokenization is one of the factors which influences the multilingual downstream performance of a language model. This paper demonstrates that vocabulary constrained grapheme cluster based tokenization leads to improved performance on Natural Language Understanding and Word-level tasks. We assess three different grapheme cluster based tokenizers, which are the Grapheme Cluster tokenizer, the Grapheme Pair Encoding, and a vocabulary constrained version of Grapheme Pair Encoding, across eleven Indic languages, namely Assamese, Bengali, Gujarati, Hindi, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, and Telugu. We present the intrinsic performance of three grapheme cluster based tokenizers using Fertility, Rényi Efficiency, and Percentile Frequency. We also compare the performance of these grapheme based tokenizers with seven popular multilingual and Indic-focused tokenizers on downstream tasks. We find that the vocabulary constrained Grapheme Pair Encoding tokenizer exhibits competitive and sometimes superior downstream performance in comparison to other grapheme cluster based tokenizers.</p>
+              <div class="pub-links"><i>In Press</i></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">CDEL — ECCV Workshop 2026</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">Synthetic Data Generation using Grapheme-level Visual Units for Handwritten Text Recognition of Grantha Manuscripts</p>
+              <p class="pub-meta"><b>Dwivedi, S.</b> & Gopalan, K.</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Handwritten Text Recognition of the Grantha script can help digitise several thousands of manuscripts and aid scholars in their research. However, deep learning algorithms require vast amounts of data to train recognition models that are robust to real world handwritten data. We propose a manuscript-native synthetic data generation pipeline, which extracts grapheme-level visual units from the manuscript leaves to create a glyph bank and recombines the glyphs to form line images using words from a Sanskrit or Tamil lexicon in the Grantha script. We assess the effectiveness of the dataset for HTR using a CNN-BiLSTM-CTC model for six manuscripts consisting of both Tamil and Sanskrit texts. The model trained with manuscript-based synthetic dataset consistently outperforms the model trained solely on font-rendered synthetic data. We also find that further improvements can be obtained by combining a smaller fraction of the synthetic data with a small amount of augmented real manuscript images, providing an effective and data-efficient approach for developing HTR systems for low-resource Grantha manuscripts.</p>
+              <div class="pub-links"><a href="https://openreview.net/forum?id=ZrDXEV8LJE" target="_blank" rel="noopener">openreview</a></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">DALL — ICDAR 2026 Workshop</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">Synthetic Line Image Generation from Cropped Grapheme Images for Handwritten Marathi Text Recognition</p>
+              <p class="pub-meta">Vaishampayan, J.; Gopalan, K.; <b>Dwivedi, S.</b></p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">We study line-level handwritten text recognition for historical Marathi manuscripts written in the Devanagari script. Existing synthetic data pipelines for Indic scripts render characters from printed fonts, producing ink distributions that diverge from handwritten strokes. Our main contribution is a manuscript-native synthetic line-image generation pipeline for this low-resource setting. Synthetic lines are assembled from a collection of real grapheme-cluster (akshara) crops extracted from manuscript pages in collection EAP248 of the Endangered Archives Programme at the British Library. Aksharas are combined into words drawn from a Marathi dictionary, and the images containing the aksharas are concatenated into line images by aligning the shirorekhas horizontally. The pipeline yields a corpus of roughly one million synthetic lines. The evaluation data is drawn from eight EAP248 manuscripts, where four contribute training lines and four are held out entirely. This results in a 525-line test set with an explicit seen/unseen handwriting split. CRNN and ViT+CTC recognisers trained on the synthetic corpus together with 657 real lines attain a character error rate of 24.0% (ViT+CTC) and 25.1% (CRNN) under a space-agnostic metric, against 45.4–86.4% for off-the-shelf OCR engines, fine-tuned baselines, and off-the-shelf vision–language models.</p>
+              <div class="pub-links"><i>In Press</i></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">Computational Sanskrit and Digital Humanities - World Sanskrit Conference 2025</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">A Case Study of Handwritten Text Recognition from Pre-Colonial era Sanskrit Manuscripts</p>
+              <p class="pub-meta">Chincholikar, K.<sup>*</sup>, <b>Dwivedi, S.<sup>*</sup></b>, Gopalan, K., Awasthi, T.</p>
+              <p class="pub-note"><sup>*</sup> Equal contribution</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Extracting text from handwritten documents and converting it to a digital form, commonly called handwritten Text Recognition (HTR), opens up new ways to access and study scanned texts. In this case study, we perform HTR on Sanskrit manuscripts from the Early Modern period, namely Vādakautūhala of Svāmiśāstrin and Bhāskararāya (early eighteenth century), and Mahāvākyārtha and Dvādaśamahāvākyārthavicāra of unknown authorship. The first is a Pūrva Mīmāṃsā text from the 18th century, while the other two are texts on the tradition of Vedānta. The proposed HTR method consists of three steps: line segmentation, line recognition, and post-correction. For segmenting line images from page images, we propose an approach that uses the scene text detection method Character Region Awareness for Text Detection (CRAFT) to detect individual characters and applies customised logic to segment them into discrete lines of text. To recognise text content from the segmented line images, we fine-tune a pre-trained recognition model for the Devanāgarī script provided by the EasyOCR library. The post-correction model, which makes language-aware corrections to the recognition model outputs, is a fine-tuned version of ByT5-Sanskrit, a pre-trained language model for Sanskrit. We observe that the proposed method performs better than out-of-the-box HTR solutions by addressing problems that are unique to older Sanskrit manuscripts, such as cramped and irregular line spacing, changes in the script over centuries, and stylistic differences in writing due to location, period, and scribe.</p>
+              <div class="pub-links"><a href="https://aclanthology.org/2025.wsc-csdh.4/" target="_blank" rel="noopener">pdf</a></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">Intl. Conf. on Human-Computer Interaction, 2025</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">A Semi-Automatic Text Recognition Tool for Pre-Colonial Handwritten Manuscripts in Devanāgari Script</p>
+              <p class="pub-meta">Valaboju, B., <b>Dwivedi, S.</b>, Chincholikar, K., Gopalan, K., Vidwans, V.</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Manual annotation of undigitized manuscripts is a resource and labor intensive endeavour. On the other hand, using out-of-the-box Optical Character Recognition (OCR) tools to digitise text from handwritten manuscripts is challenging, particularly in languages like Sanskrit, where the scripts have evolved significantly over time. This poster presents an annotation tool which allows the user to extract text from undigitized manuscripts using OCR, following which users can make corrections to the OCR-detected text. Users can then request fine tuning on a few pages corrected by them, making the annotation process easier and more efficient for the subsequent pages by improving OCR performance. Additionally, an issue faced in the annotation of manuscripts is that the Devanāgari script is sometimes laborious to edit due to the behaviour of conjunct clusters and the halant, necessitating many keystrokes for simple edits. To mitigate this issue, the application uses an additional text box that represents the text in the Harvard-Kyoto transliteration scheme, which is easier to edit given that most keyboards use the Roman alphabet. The tool also supports rare Sanskrit characters, which are not usually supported by standard typing tools. The frontend, which is designed to reduce effort on the annotator’s part by placing the recognised text in editable text boxes right below the line images, is implemented in Vue.js. The backend is a Flask server employing PyTorch for inference and fine-tuning. The application aims to facilitate efficient annotation by having users upload manuscript images, which are then processed by the backend, which segments text lines from the leaves and recognises the text in the line images. Initial evaluations from beta testers suggest that the application significantly enhances the efficiency of the annotation process, making it more accessible and reducing the time required for its completion.</p>
+              <div class="pub-links"><a href="https://doi.org/10.1007/978-3-031-94171-9_13" target="_blank" rel="noopener">doi</a></div>
+            </div>
+          </details>
+
+          <details class="pub-row">
+            <summary>
+              <div class="pub-top">
+                <span class="venue-pill">Intl. Conf. on Computer Vision &amp; Image Processing, 2024</span>
+                <span class="pub-toggle" aria-hidden="true">+</span>
+              </div>
+              <p class="pub-title">Converting Gujarati Text in Custom-Embedded Subsetted Non-Unicode Fonts to Searchable Formats: A Case Study Using Jain Religious Texts</p>
+              <p class="pub-meta">Jain, R., <b>Dwivedi, S.</b>, Gopalan, K.</p>
+            </summary>
+            <div class="pub-expand">
+              <p class="pub-abstract">Unicode font is a globally recognized coding system that assigns a unique number to every character, regardless of the platform, program, or language. However, a significant fraction of Gujarati text documents available online follow legacy fonts which are non-Unicode standard. These documents are rendered unsearchable due to the use of custom-embedded non-Unicode font subsets. This study presents a novel approach for extracting Gujarati text from non-Unicode standard PDFs with embedded fonts, addressing the challenges posed by these legacy fonts and providing a pathway to convert and preserve such documents in a searchable, Unicode-compliant format. Using VGG16, features are extracted from images of glyphs taken from non-Unicode font files. Cosine similarity is used to compare these glyph images with a consolidated reference set, assigning text characters to each Unicode character in the non-Unicode font files based on the best matching image in the reference set. The reconstructed text from the proposed method was compared with State-of-the-Art OCR technologies, including Google Cloud Vision OCR and Tesseract OCR. The results demonstrated a substantial improvement, with the proposed method achieving error rates between 0–2% for the majority of pages, compared to 4–6% with Tesseract OCR and 6–13% with Google Vision OCR.</p>
+              <div class="pub-links"><a href="https://doi.org/10.1007/978-3-031-93694-4_26" target="_blank" rel="noopener">doi</a></div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS (commented out) ================= -->
+    <!--
+    <section id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">First class postage · Handle with care</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="stamp-sheet reveal">
+          <div class="stamp-card">
+            <div class="denom">WSC '25</div>
+            <div class="stamp-art"></div>
+            <h3>Handwritten Sanskrit Manuscript HTR</h3>
+            <p>Digitizing pre-colonial Vedanta and Mimāṃsā manuscripts. A fine-tuned ResNet–BiLSTM–CTC model that outperforms off-the-shelf HTR on grapheme cluster and character error rate.</p>
+            <div class="tags"><span class="field-tag">OCR</span><span class="field-tag">Fine-tuning</span></div>
+            <a class="stamp-link" href="https://kartikchincholikar.github.io/sanskrit-ocr/" target="_blank" rel="noopener">View project →</a>
+          </div>
+          <div class="stamp-card">
+            <div class="denom">ACL '26</div>
+            <div class="stamp-art"></div>
+            <h3>Tokenizer Analysis for Hindi &amp; Marathi</h3>
+            <p>Evaluating subword tokenization methods and their downstream effect on language modeling — proposing a method to reduce over-segmentation of Indic text using T5.</p>
+            <div class="tags"><span class="field-tag">Tokenization</span><span class="field-tag">LLM eval</span></div>
+            <a class="stamp-link" href="https://aclanthology.org/2026.acl-long.1037/" target="_blank" rel="noopener">Read the paper →</a>
+          </div>
+          <div class="stamp-card">
+            <div class="denom">4 SCRIPTS</div>
+            <div class="stamp-art"></div>
+            <h3>Non-Unicode Font → Searchable Text</h3>
+            <p>Extracting Indic text from PDFs with custom-embedded, non-Unicode fonts. Started with Gujarati Jain texts, now expanded to Hindi, Marathi, and Bangla documents.</p>
+            <div class="tags"><span class="field-tag">Comp. linguistics</span><span class="field-tag">Low-resource scripts</span></div>
+            <a class="stamp-link" href="https://doi.org/10.1007/978-3-031-93694-4_26" target="_blank" rel="noopener">Read the paper →</a>
+          </div>
+          <div class="stamp-card">
+            <div class="denom">FULLY-AUTO</div>
+            <div class="stamp-art"></div>
+            <h3>Automated Synthetic Data Generation for Grantha HTR</h3>
+            <p>An end-to-end, fully automated pipeline that generates synthetic training line-images for Grantha manuscripts by recombining cropped grapheme clusters — extending the idea behind my Marathi DALL paper into an unsupervised, script-agnostic process. In progress.</p>
+            <div class="tags"><span class="field-tag">Synthetic data</span><span class="field-tag">Low-resource HTR</span></div>
+            <a class="stamp-link" href="https://github.com/ShagunDwivedi" target="_blank" rel="noopener">Follow along on GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- ================= MISC ================= -->
+    <section id="misc" style="border-bottom:none;">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Loose ends on the corkboard</span>
+          <h2 class="section-title">Misc</h2>
+        </div>
+
+        <div class="corkboard reveal">
+          <a class="scrap" style="--r:-2deg; --sticky:#d8c7e8;" href="https://bsinsider.in/decoding-the-past-with-ai-tools-shaguns-iitm-bs-journey/" target="_blank" rel="noopener">
+            <div class="tape"></div>
+            <span class="eyebrow">Press</span>
+            <h4>Interviewed by IIT Madras</h4>
+            <p>My alma mater's alumni team sat down to talk about the path from history to handwritten text recognition.</p>
+            <span class="go">read the interview →</span>
+          </a>
+          <a class="scrap" style="--r:-1.5deg; --sticky:#9fb4de;" href="https://docs.google.com/document/d/e/2PACX-1vQH7dgwPv3ZYC2wYDOuTPkxTqiOj6TN-kCLJQWrS6cR4mRbKZHgm3tH8ikLPXUuEBunkzbszoXSGGZ8/pub" target="_blank" rel="noopener">
+            <div class="tape"></div>
+            <span class="eyebrow">Co-Curricular</span>
+            <h4>BA (Hons) Thesis, History</h4>
+            <p>In another life, I researched the Trade Routes And Ports Of Ancient India. (~70 pages)</p>
+            <span class="go">read here →</span>
+          </a>
+          <a class="scrap" style="--r:2.5deg; --sticky:#efa48f;" href="https://shagundwivedi.github.io/grantha_manuscript_characters/" target="_blank" rel="noopener">
+            <div class="tape"></div>
+            <span class="eyebrow">Field notes</span>
+            <h4>Handwritten Grantha Script</h4>
+            <p>Compiling character-level notes, comparing historical handwritten characters with modern typographic representations.</p>
+            <span class="go">read the notes →</span>
+          </a>
+
+          <a class="scrap" style="--r:1.5deg; --sticky:#faf2df;" href="https://devpost.com/software/tse" target="_blank" rel="noopener">
+            <div class="tape"></div>
+            <span class="eyebrow">Hackathon</span>
+            <h4>Won $5000 at Adobe Express Add-On Hackathon 2025</h4>
+            <p>We built an Express Add-on for personalized video analytics and persona-based feedback, and won the Best New Video Innovation category!</p>
+            <span class="go">view project →</span>
+          </a>
+         
+
+          <!-- NEW CARD: fill in, then delete the comment markers around it
+          <a class="scrap" style="--r:1.5deg; --sticky:#faf2df;" href="https://example.com" target="_blank" rel="noopener">
+            <div class="tape"></div>
+            <span class="eyebrow">Label</span>
+            <h4>Title</h4>
+            <p>A sentence or two about it.</p>
+            <span class="go">link text →</span>
+          </a>
+          -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="to-lines">
+      <span class="eyebrow">Get in touch</span>
+      <div><a class="ul" style="text-decoration:none;" href="mailto:shagunpdwivedi@gmail.com">shagunpdwivedi@gmail.com</a></div>
+    </div>
+    <div class="fmono">© 2026 Shagun Dwivedi — printed on recycled bandwidth.</div>
+  </footer>
+
+  </div><!-- /folder-body -->
+
+</div><!-- /folder-wrap -->
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{ threshold:0.12 });
+    els.forEach(el=>io.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('in'));
+  }
+</script>
+
 </body>
 </html>
